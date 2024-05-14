@@ -89,7 +89,7 @@ vec3 psyColor( vec2 fragCoord ) {
         d = sin(d * 8. + iTime) / 8.;
         d = abs(d);
 
-        d = pow(0.2/d, 1.2);
+        d = pow((0.2 - iProgress / 10.)/d, 1.2);
 
         finalColor += col * d;
     }
@@ -119,7 +119,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         color = vec3(1.0);
     }
 
-    color = vec3(1.0 - iProgress) - color;
+    color = vec3(1.0 - min(iProgress, 1.0)) - color;
     
     
     fragColor = vec4(color, alpha);
