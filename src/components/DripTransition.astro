@@ -6,7 +6,9 @@
   <center><h1>404 Not Found</h1></center>
   <hr /><center>nginx/1.22.1</center>
 </div>
-<canvas id="drip" class="-z-10"></canvas>
+<canvas
+  id="drip"
+  class="-z-10 absolute inset-0 overflow-hidden w-screen h-screen"></canvas>
 <script>
   import * as THREE from "three";
   import { indexSlideshowProgress } from "../store";
@@ -82,14 +84,6 @@
 </script>
 <style>
   #drip {
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
-
     animation: slide-down 1s linear;
   }
 
