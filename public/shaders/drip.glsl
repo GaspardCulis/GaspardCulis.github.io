@@ -74,14 +74,34 @@ float dripSDF( vec2 uv )
     return o * clamp(distance(0.0, uv.y)/s,0.0,1.0);
 }
 
+vec3 psyColor( vec2 fragCoord ) {
+    // Normalized pixel coordinates (from 0 to 1)
+    vec2 uv = (fragCoord * 2.0 - iResolution.xy)/iResolution.y;
+    vec2 uv0 = uv;
+    vec3 finalColor = vec3(0.0);
+    
+    for (float i = 0.0; i < 4.0; i++) {
+        uv = fract(uv * 1.5) - 0.5;
+
+        float d = length(uv) * exp(-length(uv0));
+        vec3 col = palette(length(uv0) + (i + iTime) * .4);
+
+        d = sin(d * 8. + iTime) / 8.;
+        d = abs(d);
+
+        d = pow(0.2/d, 1.2);
+
+        finalColor += col * d;
+    }
+
+    return finalColor;
+}
+
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     vec2 uv = fragCoord/iResolution.xy;
     uv.x *= iResolution.x / iResolution.y; //square
     uv.y = 1.0 - uv.y; //flip
-    
-    // uv.y -= 1.0;
-    
     
     float c = 1.0/sdfWidth * 0.025;
     float w = 0.03;
@@ -91,37 +111,18 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     
     float smoth = 1.0 - smoothstep( c - w, c + w, d );
 
-    
-    // Normalized pixel coordinates (from 0 to 1)
-    vec2 uv_col = (fragCoord * 2.0 - iResolution.xy)/iResolution.y;
-    vec2 uv0 = uv_col;
-    vec3 finalColor = vec3(0.0);
-    
-    for (float i = 0.0; i < 4.0; i++) {
-        uv_col = fract(uv_col * 1.5) - 0.5;
-
-        float d = length(uv_col) * exp(-length(uv0));
-        vec3 col = palette(length(uv0) + (i + iTime) * .4);
-
-        d = sin(d * 8. + iTime) / 8.;
-        d = abs(d);
-
-        d = pow(0.2/d, 1.2);
-
-        finalColor += col * d * smoth;
-    }
+    vec3 color = psyColor(fragCoord) * smoth;
     
     float alpha = 1.0;
-    if (length(finalColor.rgb) == 0.0) {
+    if (length(color.rgb) == 0.0) {
         alpha = 0.0;
-        finalColor = vec3(1.0);
+        color = vec3(1.0);
     }
 
-    finalColor = vec3(1.0 - iProgress) - finalColor;
+    color = vec3(1.0 - iProgress) - color;
     
     
-    fragColor = vec4(finalColor,alpha);
-    //fragColor = vec4(rand(uv.x, uv.y));
+    fragColor = vec4(color, alpha);
 }
 
 void main() {
