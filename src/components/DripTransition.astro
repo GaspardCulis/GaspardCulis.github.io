@@ -1,0 +1,95 @@
+---
+
+---
+
+<canvas id="drip"></canvas>
+<script>
+  import * as THREE from "three";
+
+  const canvas = document.querySelector("#drip") as HTMLCanvasElement;
+  const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
+  renderer.autoClearColor = false;
+
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -1, 1);
+
+  const loader = new THREE.TextureLoader();
+  const texture = loader.load("/images/drip_iChannel0.png");
+  texture.minFilter = THREE.NearestFilter;
+  texture.magFilter = THREE.NearestFilter;
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+
+  const uniforms = {
+    iTime: { value: 0 },
+    iResolution: { value: new THREE.Vector3() },
+    iChannel0: { value: texture },
+    iProgress: { value: 0 },
+  };
+
+  const response = await fetch("/shaders/drip.glsl");
+  const fragmentShader = await response.text();
+  const material = new THREE.ShaderMaterial({
+    fragmentShader,
+    uniforms,
+  });
+
+  const scene = new THREE.Scene();
+  const plane = new THREE.PlaneGeometry(2, 2);
+  scene.add(new THREE.Mesh(plane, material));
+
+  function resizeRendererToDisplaySize(renderer: THREE.Renderer) {
+    const canvas = renderer.domElement;
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    const needResize = canvas.width !== width || canvas.height !== height;
+    if (needResize) {
+      renderer.setSize(width, height, false);
+    }
+    return needResize;
+  }
+
+  let t0 = Date.now();
+  let time_scale = 0.0;
+  function render() {
+    const time = (Date.now() - t0) * time_scale;
+
+    resizeRendererToDisplaySize(renderer);
+
+    const canvas = renderer.domElement;
+    uniforms.iResolution.value.set(canvas.width, canvas.height, 1);
+    uniforms.iTime.value = time;
+    uniforms.iProgress.value = time / 8;
+
+    renderer.render(scene, camera);
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+  setTimeout(() => {
+    t0 = Date.now();
+    time_scale = 0.001;
+  }, 950);
+</script>
+<style>
+  #drip {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+
+    animation: slide-down 1s linear;
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-200vh);
+    }
+    100% {
+      transform: translateY(0vh);
+    }
+  }
+</style>
