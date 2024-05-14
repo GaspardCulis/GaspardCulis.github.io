@@ -9,6 +9,7 @@
 <canvas id="drip" class="-z-10"></canvas>
 <script>
   import * as THREE from "three";
+  import { indexSlideshowProgress } from "../store";
 
   const canvas = document.querySelector("#drip") as HTMLCanvasElement;
   const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
@@ -73,6 +74,10 @@
   setTimeout(() => {
     t0 = Date.now();
     time_scale = 0.001;
+
+    setTimeout(() => {
+      indexSlideshowProgress.dripFilledScreen.set(true);
+    }, 9000);
   }, 950);
 </script>
 <style>
