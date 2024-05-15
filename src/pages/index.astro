@@ -1,10 +1,17 @@
 ---
 import DripTransition from "../components/DripTransition.astro";
+import IntroText from "../components/IntroText.astro";
+import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
+
+const pages = {
+	"": "Home",
+	projects: "Projects",
+};
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<DripTransition />
+		<Navbar pages={pages} rightText="My CV" leftText="Gasdev.fr" />
 	</main>
 </Layout>
