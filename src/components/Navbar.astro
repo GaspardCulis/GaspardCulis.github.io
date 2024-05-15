@@ -1,13 +1,19 @@
 ---
 export interface Props {
   pages: { [slug: string]: string };
-  leftIcon?: string;
-  leftText?: string;
-  rightText?: string;
+  left?: {
+    text?: string;
+    icon?: string;
+    href?: string;
+  };
+  right?: {
+    text: string;
+    href?: string;
+  };
   fixed?: boolean;
 }
 
-const { pages, leftIcon, leftText, rightText, fixed } = Astro.props;
+const { pages, left, right, fixed } = Astro.props;
 ---
 
 <!-- https://flowbite.com/docs/components/navbar/#navbar-with-cta-button -->
@@ -18,11 +24,11 @@ const { pages, leftIcon, leftText, rightText, fixed } = Astro.props;
   <div
     class="flex flex-wrap items-center justify-between max-w-screen-xl px-2 lg:px-4 mx-auto"
   >
-    <a href="/" class="flex items-center">
+    <a href={left?.href || "#"} class="flex items-center">
       {
-        leftIcon && (
+        left?.icon && (
           <img
-            src={leftIcon}
+            src={left.icon}
             width="64"
             height="64"
             class="mr-3"
@@ -31,9 +37,9 @@ const { pages, leftIcon, leftText, rightText, fixed } = Astro.props;
         )
       }
       {
-        leftText && (
+        left?.text && (
           <span class="self-center text-md lg:text-xl font-semibold whitespace-nowrap text-base-content group-[.is-fixed]:group-[.is-fixed]:lg:text-white">
-            {leftText}
+            {left.text}
           </span>
         )
       }
@@ -44,12 +50,12 @@ const { pages, leftIcon, leftText, rightText, fixed } = Astro.props;
       </div>
 
       {
-        rightText && (
+        right?.text && (
           <a
-            href="#"
+            href={right.href || "#"}
             class="text-accent-content bg-accent hover:bg-primary-accent focus:ring-4 focus:ring-secondary font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0"
           >
-            {rightText}
+            {right.text}
           </a>
         )
       }

@@ -12,6 +12,13 @@ const pages = {
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<Navbar pages={pages} rightText="My CV" leftText="Gasdev.fr" />
+		<Navbar
+			pages={pages}
+			left={{ text: "Gasdev.fr", href: "/" }}
+			right={{
+				text: "My CV",
+				href: "https://public.s3web.gasdev.fr/CV Gaspard Culis 2024.pdf",
+			}}
+		/>
 	</main>
 </Layout>
