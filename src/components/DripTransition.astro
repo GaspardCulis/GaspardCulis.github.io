@@ -2,18 +2,23 @@
 
 ---
 
-<div class="-z-20 relative">
+<div
+  id="fake-nginx"
+  class="absolute inset-0 z-10 w-screen h-screen"
+  data-theme="light"
+>
   <center><h1>404 Not Found</h1></center>
   <hr /><center>nginx/1.22.1</center>
 </div>
 <canvas
   id="drip"
-  class="-z-10 absolute inset-0 overflow-hidden w-screen h-screen"></canvas>
+  class="z-20 absolute inset-0 overflow-hidden w-screen h-screen"></canvas>
 <script>
   import * as THREE from "three";
   import { indexSlideshowProgress } from "../store";
 
-  const canvas = document.querySelector("#drip") as HTMLCanvasElement;
+  const fakeNGINXDiv = document.querySelector("#fake-nginx")!;
+  const canvas = document.querySelector("#drip")!;
   const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
   renderer.autoClearColor = false;
 
@@ -65,7 +70,7 @@
     const canvas = renderer.domElement;
     uniforms.iResolution.value.set(canvas.width, canvas.height, 1);
     uniforms.iTime.value = time;
-    uniforms.iProgress.value = time / 8;
+    uniforms.iProgress.value = Math.min(time / 16, 1.0);
 
     renderer.render(scene, camera);
 

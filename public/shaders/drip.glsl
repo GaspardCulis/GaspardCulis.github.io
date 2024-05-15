@@ -89,7 +89,7 @@ vec3 psyColor( vec2 fragCoord ) {
         d = sin(d * 8. + iTime) / 8.;
         d = abs(d);
 
-        d = pow((0.2 - iProgress / 10.)/d, 1.2);
+        d = pow((0.1 / (iProgress * 8.0 + 1.))/d, 1.2);
 
         finalColor += col * d;
     }
@@ -106,7 +106,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     float c = 1.0/sdfWidth * 0.025;
     float w = 0.03;
     
-    uv.y -= (iProgress * 2.0 - 1.);
+    uv.y -= (iProgress * 6.0 - 1.);
     float d = dripSDF(uv);
     
     float smoth = 1.0 - smoothstep( c - w, c + w, d );
@@ -119,7 +119,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         color = vec3(1.0);
     }
 
-    color = vec3(1.0 - min(iProgress, 1.0)) - color;
+    color = vec3(1.0 - min(iProgress * 4.0, 1.0)) - color;
     
     
     fragColor = vec4(color, alpha);
