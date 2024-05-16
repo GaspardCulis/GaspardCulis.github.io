@@ -23,7 +23,7 @@ const { pages, left, right, fixed } = Astro.props;
     `${fixed ? "is-fixed lg:fixed lg:bg-transparent lg:shadow-none" : ""}`}
 >
   <div
-    class="flex flex-wrap items-center justify-between max-w-screen-xl px-2 lg:px-4 mx-auto"
+    class="flex flex-wrap items-center justify-between max-w-screen-xl px-2 lg:px-4 mx-auto text-md lg:text-lg xl:text-xl"
   >
     <a href={left?.href || "#"} class="flex items-center">
       {
@@ -102,7 +102,7 @@ const { pages, left, right, fixed } = Astro.props;
             <li>
               <a
                 href={`/${page[0]}`}
-                class={`block py-2 px-4 text-base-content rounded lg:rounded-xl lg:text-lg hover:bg-base-200 ${
+                class={`block py-2 px-4 text-base-content font-semibold rounded lg:rounded-xl hover:bg-base-200 ${
                   `${page[0]}` === Astro.url.pathname.split("/")[1]
                     ? "text-primary"
                     : ""
