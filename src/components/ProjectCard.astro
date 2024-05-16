@@ -1,0 +1,23 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  img: string;
+  tags?: string[];
+}
+
+const { title, description, img, tags } = Astro.props;
+---
+
+<div class="card md:max-w-96 2xl:max-w-md bg-base-100 shadow-xl">
+  <figure>
+    <img src={img} alt={title} />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p>{description}</p>
+    <div class="card-actions justify-end">
+      {tags?.map((tag) => <div class="badge badge-outline">{tag}</div>)}
+    </div>
+  </div>
+</div>

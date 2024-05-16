@@ -3,6 +3,7 @@ import DripTransition from "../components/DripTransition.astro";
 import Hero from "../components/Hero.astro";
 import IntroText from "../components/IntroText.astro";
 import Navbar from "../components/Navbar.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import SwiperSection from "../components/SwiperSection.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -30,25 +31,12 @@ const pages = {
 			<SwiperSection class="text-base-content">
 				{
 					[0, 2, 3].map((_) => (
-						<div class="card md:max-w-96 2xl:max-w-md bg-base-100 shadow-xl">
-							<figure>
-								<img
-									src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-									alt="Shoes"
-								/>
-							</figure>
-							<div class="card-body">
-								<h2 class="card-title">
-									Shoes!
-									<div class="badge badge-secondary">NEW</div>
-								</h2>
-								<p>If a dog chews shoes whose shoes does he choose?</p>
-								<div class="card-actions justify-end">
-									<div class="badge badge-outline">Fashion</div>
-									<div class="badge badge-outline">Products</div>
-								</div>
-							</div>
-						</div>
+						<ProjectCard
+							title="Shoes!"
+							description="If a dog chews shoes whose shoes does he choose?"
+							img="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+							tags={["Fashion", "Products"]}
+						/>
 					))
 				}
 			</SwiperSection>
