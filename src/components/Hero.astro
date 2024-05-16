@@ -1,7 +1,16 @@
+---
+import { Image } from "astro:assets";
+import me from "../content/images/me.jpg";
+---
+
 <div class="hero min-h-[40vh] bg-base-200">
   <div class="hero-content flex-col lg:flex-row h-full">
     <div class="relative">
-      <img src="/images/me.jpg" class="max-w-sm rounded-2xl shadow-2xl" />
+      <Image
+        src={me}
+        alt="Picture of me on the beach"
+        class="max-w-sm rounded-2xl shadow-2xl"
+      />
       <div class="absolute inset-0 mockup-code animate">
         <pre data-prefix="$"><code>imv ~/Images/me.png</code></pre>
         <pre
