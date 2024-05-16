@@ -1,0 +1,50 @@
+---
+export interface Props {
+  class?: string;
+}
+---
+
+<div class={"swiper " + Astro.props.class || ""}>
+  <div class="swiper-wrapper mb-10">
+    <slot />
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination" style="--swiper-pagination-color: #F5F5F5">
+  </div>
+</div>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination } from "swiper/modules";
+  // import Swiper and modules styles
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+
+  for (let swiper of document.querySelectorAll(
+    ".swiper",
+  ) as NodeListOf<HTMLElement>) {
+    const wrapper = swiper.querySelector(".swiper-wrapper")!;
+    wrapper.childNodes.forEach((n) => {
+      (n as HTMLElement).classList?.add("swiper-slide");
+    });
+
+    const _swiper = new Swiper(swiper, {
+      modules: [Navigation, Pagination],
+      direction: "horizontal",
+      slidesPerView: "auto",
+      spaceBetween: 48,
+      centerInsufficientSlides: true,
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
+    });
+  }
+</script>
