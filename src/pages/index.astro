@@ -1,4 +1,5 @@
 ---
+import { getEntry } from "astro:content";
 import DripTransition from "../components/DripTransition.astro";
 import Hero from "../components/Hero.astro";
 import IntroText from "../components/IntroText.astro";
@@ -12,6 +13,12 @@ const pages = {
 	projects: "Projects",
 	skills: "Skills",
 };
+
+const featured = [
+	await getEntry("project", "daniel-culis"),
+	await getEntry("project", "daniel-culis"),
+	await getEntry("project", "daniel-culis"),
+];
 ---
 
 <Layout title="Welcome to Astro.">
@@ -27,18 +34,9 @@ const pages = {
 		/>
 		<Hero />
 		<section class="bg-primary text-primary-content py-12 px-8">
-			<h1 class="mb-8 text-5xl font-bold text-center">Featured Work</h1>
-			<SwiperSection class="text-base-content">
-				{
-					[0, 2, 3].map((_) => (
-						<ProjectCard
-							title="Shoes!"
-							description="If a dog chews shoes whose shoes does he choose?"
-							img="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-							tags={["Fashion", "Products"]}
-						/>
-					))
-				}
+			<h1 class="mb-16 text-5xl font-bold text-center">Featured Work</h1>
+			<SwiperSection class="text-base-content" wrapperClass="pb-10">
+				{featured.map((project) => <ProjectCard project={project} />)}
 			</SwiperSection>
 		</section>
 	</main>
