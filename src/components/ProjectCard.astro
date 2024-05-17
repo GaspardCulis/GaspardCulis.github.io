@@ -9,7 +9,8 @@ export interface Props {
 const { title, description, image, tags } = Astro.props.project.data;
 ---
 
-<div
+<a
+  href={`/project/${Astro.props.project.slug}`}
   class="card group bg-base-100 hover:bg-base-200 shadow-xl cursor-pointer transition-colors"
 >
   <figure>
@@ -34,4 +35,4 @@ const { title, description, image, tags } = Astro.props.project.data;
       }
     </div>
   </div>
-</div>
+</a>
