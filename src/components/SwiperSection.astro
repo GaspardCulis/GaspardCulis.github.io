@@ -1,11 +1,12 @@
 ---
 export interface Props {
   class?: string;
+  wrapperClass?: string;
 }
 ---
 
 <div class={"swiper " + Astro.props.class || ""}>
-  <div class="swiper-wrapper mb-10">
+  <div class={"swiper-wrapper " + Astro.props.wrapperClass || ""}>
     <slot />
   </div>
   <div class="swiper-button-prev"></div>
@@ -36,6 +37,12 @@ export interface Props {
       slidesPerView: "auto",
       spaceBetween: 48,
       centerInsufficientSlides: true,
+
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+        },
+      },
 
       navigation: {
         nextEl: ".swiper-button-next",
