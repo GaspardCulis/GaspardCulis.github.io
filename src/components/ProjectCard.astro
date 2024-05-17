@@ -1,23 +1,33 @@
 ---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
 export interface Props {
-  title: string;
-  description: string;
-  img: string;
-  tags?: string[];
+  project: CollectionEntry<"project">;
 }
 
-const { title, description, img, tags } = Astro.props;
+const { title, description, image, tags } = Astro.props.project.data;
 ---
 
-<div class="card md:max-w-96 2xl:max-w-md bg-base-100 shadow-xl">
+<div
+  class="card group bg-base-100 hover:bg-base-200 shadow-xl cursor-pointer transition-colors"
+>
   <figure>
-    <img src={img} alt={title} />
+    <Image
+      src={image}
+      alt={title}
+      class="transition-transform group-hover:scale-105"
+    />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">{title}</h2>
+    <h2 class="card-title hover:underline">{title}</h2>
     <p>{description}</p>
     <div class="card-actions justify-end">
-      {tags?.map((tag) => <div class="badge badge-outline">{tag}</div>)}
+      {
+        tags?.map((tag) => (
+          <div class="badge badge-outline hover:badge-ghost">{tag}</div>
+        ))
+      }
     </div>
   </div>
 </div>
