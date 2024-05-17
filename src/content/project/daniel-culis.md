@@ -1,6 +1,7 @@
 ---
 title: "danielculis.fr"
 description: "My grandpa's memorial website"
+url: "https://danielculis.fr"
 image: ../images/danielculis.fr.png
 tags:
   - AstroJS

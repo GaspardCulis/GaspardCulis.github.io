@@ -6,6 +6,7 @@ const projectCollection = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
+      url: z.string().optional(),
       image: image(),
       tags: z.array(z.string()),
     }),
