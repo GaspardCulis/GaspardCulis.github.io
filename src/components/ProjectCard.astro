@@ -35,7 +35,7 @@ const { title, description, repo, url, image, tags } = Astro.props.project.data;
       <div class="space-x-2">
         {
           repo && (
-            <a href={repo} class="btn btn-neutral mb-4">
+            <a href={repo} target="_blank" class="btn btn-neutral mb-4">
               Repo
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ const { title, description, repo, url, image, tags } = Astro.props.project.data;
         }
         {
           url && (
-            <a href={url} class="btn btn-primary mb-4">
+            <a href={url} target="_blank" class="btn btn-primary mb-4">
               Visit
               <svg
                 xmlns="http://www.w3.org/2000/svg"
