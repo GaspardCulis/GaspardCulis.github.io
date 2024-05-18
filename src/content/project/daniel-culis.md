@@ -1,6 +1,7 @@
 ---
 title: "danielculis.fr"
 description: "My grandpa's memorial website"
+repo: "https://github.com/GaspardCulis/pepe"
 url: "https://danielculis.fr"
 image: ../images/danielculis.fr.png
 tags:
