@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" font-family="Consolas, Menlo, 'Bitstream Vera Sans Mono', monospace, 'Powerline Symbols'" font-size="14px">
+  <style>
+    .br { font-weight: bold }
+    .fa { fill-opacity: 0.5 }
+    .it { font-style: italic }
+    .un { text-decoration: underline }
+  </style>
+
+  <rect width="100%" height="100%" style="fill: #121314" rx="4" ry="4"></rect>
+
+  <svg x="8.42333333" y="0" class="default-text-fill">
+    <g style="shape-rendering: optimizeSpeed">
+
+        <rect x="0.0" y="671.9998320000001" width="8.42333333" height="18.666662000000002" style="fill: #d9d9d9"></rect>
+
+
+    </g>
+
+    <text style="fill: #cccccc">
+      <tspan y="0.0">
+        <tspan dy="1em" x="8.42333333" style="fill: rgb(27,244,113)">
+l
+        </tspan><tspan x="16.84666666" style="fill: rgb(35,249,100)">
+_
+        </tspan><tspan x="25.269999990000002" style="fill: rgb(44,252,88)">
+_
+        </tspan><tspan x="50.539999980000005" style="fill: rgb(76,254,54)">
+|
+        </tspan><tspan x="58.96333331" style="fill: rgb(88,252,44)">
+Y
+        </tspan><tspan x="84.2333333" style="fill: rgb(126,239,20)">
+o
+        </tspan><tspan x="109.50333329" style="fill: rgb(162,216,5)">
+|
+        </tspan><tspan x="117.92666662" style="fill: rgb(174,206,3)">
+Y
+        </tspan><tspan x="143.19666661" style="fill: rgb(207,173,3)">
+o
+        </tspan><tspan x="168.4666666" style="fill: rgb(233,136,14)">
+|
+        </tspan><tspan x="176.88999993000002" style="fill: rgb(239,125,20)">
+l
+        </tspan><tspan x="185.31333326" style="fill: rgb(245,112,28)">
+_
+        </tspan><tspan x="193.73666659" style="fill: rgb(249,100,36)">
+_
+        </tspan><tspan x="219.00666658" style="fill: rgb(254,64,66)">
+|
+        </tspan>
+      </tspan><tspan y="18.666662000000002">
+        <tspan dy="1em" x="8.42333333" style="fill: rgb(35,249,100)">
+_
+        </tspan><tspan x="16.84666666" style="fill: rgb(44,252,88)">
+_
+        </tspan><tspan x="25.269999990000002" style="fill: rgb(54,254,76)">
+j
+        </tspan><tspan x="50.539999980000005" style="fill: rgb(88,252,44)">
+|
+        </tspan><tspan x="58.96333331" style="fill: rgb(100,249,35)">
+|
+        </tspan><tspan x="109.50333329" style="fill: rgb(174,206,3)">
+|
+        </tspan><tspan x="117.92666662" style="fill: rgb(186,196,2)">
+|
+        </tspan><tspan x="168.4666666" style="fill: rgb(239,125,20)">
+|
+        </tspan><tspan x="176.88999993000002" style="fill: rgb(245,112,28)">
+_
+        </tspan><tspan x="185.31333326" style="fill: rgb(249,100,36)">
+_
+        </tspan><tspan x="193.73666659" style="fill: rgb(252,87,45)">
+j
+        </tspan><tspan x="219.00666658" style="fill: rgb(254,54,77)">
+|
+        </tspan>
+      </tspan><tspan y="37.333324000000005">
+        <tspan dy="1em" x="0.0" style="fill: rgb(35,249,100)">
+/
+        </tspan><tspan x="25.269999990000002" style="fill: rgb(65,254,65)">
+|
+        </tspan><tspan x="50.539999980000005" style="fill: rgb(100,249,35)">
+|
+        </tspan><tspan x="58.96333331" style="fill: rgb(113,244,27)">
+|
+        </tspan><tspan x="84.2333333" style="fill: rgb(150,225,9)">
+_
+        </tspan><tspan x="109.50333329" style="fill: rgb(186,196,2)">
+|
+        </tspan><tspan x="117.92666662" style="fill: rgb(197,185,2)">
+|
+        </tspan><tspan x="143.19666661" style="fill: rgb(225,149,9)">
+_
+        </tspan><tspan x="168.4666666" style="fill: rgb(245,112,28)">
+/
+        </tspan><tspan x="193.73666659" style="fill: rgb(254,76,55)">
+|
+        </tspan><tspan x="219.00666658" style="fill: rgb(252,44,89)">
+|
+        </tspan>
+      </tspan><tspan y="55.99998600000001">
+        <tspan dy="1em" x="0.0" style="fill: rgb(44,252,88)">
+\
+        </tspan><tspan x="25.269999990000002" style="fill: rgb(76,254,54)">
+`
+        </tspan><tspan x="50.539999980000005" style="fill: rgb(113,244,27)">
+|
+        </tspan><tspan x="58.96333331" style="fill: rgb(126,239,20)">
+|
+        </tspan><tspan x="84.2333333" style="fill: rgb(162,216,5)">
+|
+        </tspan><tspan x="109.50333329" style="fill: rgb(197,185,2)">
+|
+        </tspan><tspan x="117.92666662" style="fill: rgb(207,173,3)">
+|
+        </tspan><tspan x="143.19666661" style="fill: rgb(233,136,14)">
+|
+        </tspan><tspan x="168.4666666" style="fill: rgb(249,100,36)">
+\
+        </tspan><tspan x="193.73666659" style="fill: rgb(254,64,66)">
+`
+        </tspan><tspan x="219.00666658" style="fill: rgb(249,35,101)">
+|
+        </tspan>
+      </tspan><tspan y="74.66664800000001">
+        <tspan dy="1em" x="8.42333333" style="fill: rgb(65,254,65)">
+\
+        </tspan><tspan x="16.84666666" style="fill: rgb(76,254,54)">
+_
+        </tspan><tspan x="25.269999990000002" style="fill: rgb(88,252,44)">
+_
+        </tspan><tspan x="33.69333332" style="fill: rgb(100,249,35)">
+_
+        </tspan><tspan x="42.11666665" style="fill: rgb(113,244,27)">
+_
+        </tspan><tspan x="50.539999980000005" style="fill: rgb(126,239,20)">
+j
+        </tspan><tspan x="58.96333331" style="fill: rgb(137,232,14)">
+l
+        </tspan><tspan x="67.38666664" style="fill: rgb(150,225,9)">
+_
+        </tspan><tspan x="75.80999997" style="fill: rgb(162,216,5)">
+_
+        </tspan><tspan x="84.2333333" style="fill: rgb(174,206,3)">
+j
+        </tspan><tspan x="92.65666663" style="fill: rgb(186,196,2)">
+_
+        </tspan><tspan x="101.07999996000001" style="fill: rgb(197,185,2)">
+_
+        </tspan><tspan x="109.50333329" style="fill: rgb(207,173,3)">
+j
+        </tspan><tspan x="117.92666662" style="fill: rgb(217,161,6)">
+l
+        </tspan><tspan x="126.34999995" style="fill: rgb(225,149,9)">
+_
+        </tspan><tspan x="134.77333328" style="fill: rgb(233,136,14)">
+_
+        </tspan><tspan x="143.19666661" style="fill: rgb(239,125,20)">
+j
+        </tspan><tspan x="151.61999994" style="fill: rgb(245,112,28)">
+_
+        </tspan><tspan x="160.04333327" style="fill: rgb(249,100,36)">
+_
+        </tspan><tspan x="168.4666666" style="fill: rgb(252,87,45)">
+j
+        </tspan><tspan x="176.88999993000002" style="fill: rgb(254,76,55)">
+\
+        </tspan><tspan x="185.31333326" style="fill: rgb(254,64,66)">
+_
+        </tspan><tspan x="193.73666659" style="fill: rgb(254,54,77)">
+_
+        </tspan><tspan x="202.15999992000002" style="fill: rgb(252,44,89)">
+_
+        </tspan><tspan x="210.58333325" style="fill: rgb(249,35,101)">
+_
+        </tspan><tspan x="219.00666658" style="fill: rgb(244,27,114)">
+j
+        </tspan>
+      </tspan><tspan y="167.99995800000002">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #54e1b9">
+~
+        </tspan>
+      </tspan><tspan y="186.66662000000002">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #4ebf22">
+❯
+        </tspan><tspan x="16.84666666">
+cargo install svg-tileserver
+        </tspan>
+      </tspan><tspan y="205.33328200000003">
+        <tspan dy="1em" x="33.69333332" class="br" style="fill: #4ebf22">
+Updating
+        </tspan><tspan x="109.50333329">
+crates.io index
+        </tspan>
+      </tspan><tspan y="223.99994400000003">
+        <tspan dy="1em" x="42.11666665" class="br" style="fill: #4ebf22">
+Ignored
+        </tspan><tspan x="109.50333329">
+package `svg-tileserver v0.1.2` is already installed, use --force to override
+        </tspan>
+      </tspan><tspan y="261.33326800000003">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #54e1b9">
+~
+        </tspan>
+      </tspan><tspan y="279.99993">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #4ebf22">
+❯
+        </tspan><tspan x="16.84666666">
+svg-tileserver --help
+        </tspan>
+      </tspan><tspan y="298.66659200000004">
+        <tspan dy="1em" x="0.0">
+A high performance SVG Leaflet/MapLibre compatible tile server
+        </tspan>
+      </tspan><tspan y="335.99991600000004">
+        <tspan dy="1em" x="0.0" class="br un">
+Usage:
+        </tspan><tspan x="58.96333331" class="br">
+svg-tileserver
+        </tspan><tspan x="185.31333326">
+[OPTIONS] &lt;SVG_PATH&gt;
+        </tspan>
+      </tspan><tspan y="373.33324000000005">
+        <tspan dy="1em" x="0.0" class="br un">
+Arguments:
+        </tspan>
+      </tspan><tspan y="391.999902">
+        <tspan dy="1em" x="16.84666666">
+&lt;SVG_PATH&gt;
+        </tspan><tspan x="117.92666662">
+The path of the SVG that should be served
+        </tspan>
+      </tspan><tspan y="429.333226">
+        <tspan dy="1em" x="0.0" class="br un">
+Options:
+        </tspan>
+      </tspan><tspan y="447.99988800000006">
+        <tspan dy="1em" x="16.84666666" class="br">
+-t
+        </tspan><tspan x="33.69333332">
+, 
+        </tspan><tspan x="50.539999980000005" class="br">
+--tile-size
+        </tspan><tspan x="151.61999994">
+&lt;TILE_SIZE&gt;
+        </tspan><tspan x="311.66333321">
+The size in pixels of a PNG tile [default: 256]
+        </tspan>
+      </tspan><tspan y="466.66655000000003">
+        <tspan dy="1em" x="16.84666666" class="br">
+-p
+        </tspan><tspan x="33.69333332">
+, 
+        </tspan><tspan x="50.539999980000005" class="br">
+--port
+        </tspan><tspan x="109.50333329">
+&lt;PORT&gt;
+        </tspan><tspan x="311.66333321">
+The port to start the server on [default: 8080]
+        </tspan>
+      </tspan><tspan y="485.33321200000006">
+        <tspan dy="1em" x="16.84666666" class="br">
+-b
+        </tspan><tspan x="33.69333332">
+, 
+        </tspan><tspan x="50.539999980000005" class="br">
+--bind-address
+        </tspan><tspan x="176.88999993000002">
+&lt;BIND_ADDRESS&gt;
+        </tspan><tspan x="311.66333321">
+The address to bind the server on [default: 127.0.0.1]
+        </tspan>
+      </tspan><tspan y="503.99987400000003">
+        <tspan dy="1em" x="16.84666666" class="br">
+-h
+        </tspan><tspan x="33.69333332">
+, 
+        </tspan><tspan x="50.539999980000005" class="br">
+--help
+        </tspan><tspan x="311.66333321">
+Print help
+        </tspan>
+      </tspan><tspan y="522.6665360000001">
+        <tspan dy="1em" x="16.84666666" class="br">
+-V
+        </tspan><tspan x="33.69333332">
+, 
+        </tspan><tspan x="50.539999980000005" class="br">
+--version
+        </tspan><tspan x="311.66333321">
+Print version
+        </tspan>
+      </tspan><tspan y="559.99986">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #54e1b9">
+~
+        </tspan>
+      </tspan><tspan y="578.6665220000001">
+        <tspan dy="1em" x="0.0" class="br" style="fill: #4ebf22">
+❯
+        </tspan><tspan x="16.84666666">
+svg-tileserver Images/demo.svg
+        </tspan>
+      </tspan><tspan y="597.3331840000001">
+        <tspan dy="1em" x="0.0">
+Starting server...
+        </tspan>
+      </tspan><tspan y="615.999846">
+        <tspan dy="1em" x="0.0">
+Parsing Images/demo.svg...
+        </tspan>
+      </tspan><tspan y="634.666508">
+        <tspan dy="1em" x="0.0">
+Parsing took 80.93ms
+        </tspan>
+      </tspan><tspan y="653.33317">
+        <tspan dy="1em" x="0.0">
+Server started on http://127.0.0.1:8080/tile/{z}/{x}/{y}.png
+        </tspan>
+      </tspan>
+    </text>
+  </svg>
+</svg>
