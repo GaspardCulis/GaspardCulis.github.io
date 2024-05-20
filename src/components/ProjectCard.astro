@@ -34,7 +34,7 @@ const { title, description, repo, url, image, tags } = project.data;
             href={project.body
               ? `/project/${Astro.props.project.slug}`
               : undefined}
-            class={"card-title" + (project.body ? "hover:underline" : "")}
+            class={"card-title " + (project.body ? "hover:underline" : "")}
             >{title}
           </a>
           {
