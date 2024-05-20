@@ -31,15 +31,19 @@ const { title, description, repo, url, image, tags } = project.data;
       <div>
         <div class="flex space-x-2 items-center">
           <a
-            href={`/project/${Astro.props.project.slug}`}
-            class="card-title hover:underline"
+            href={project.body
+              ? `/project/${Astro.props.project.slug}`
+              : undefined}
+            class={"card-title" + (project.body ? "hover:underline" : "")}
             >{title}
           </a>
-          <div
-            class="badge badge-outline opacity-0 group-hover:opacity-100 transition-opacity no-underline text-nowrap"
-          >
-            Full post
-          </div>
+          {
+            project.body && (
+              <div class="badge badge-outline opacity-0 group-hover:opacity-100 transition-opacity no-underline text-nowrap">
+                Full post
+              </div>
+            )
+          }
         </div>
         <p>{description}</p>
       </div>
