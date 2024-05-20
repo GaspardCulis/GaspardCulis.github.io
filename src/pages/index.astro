@@ -31,18 +31,22 @@ const featured = [
 			}}
 		/>
 		<Hero />
-		<section class="bg-primary text-primary-content p-4 md:px-20 pt-20 lg:pb-0">
-			<div class="flex justify-between space-x-12">
-				<article>
-					<h1 class="mb-4 text-5xl font-bold">Featured Work</h1>
-					<h2 class="mb-16 text-xl 2xl:text-2xl">
-						I love to create things, and I'm always working on something new!
-						You can view some of my favorite projects below.
-					</h2>
-				</article>
-				<a href="/projects/" class="btn btn-secondary">See more</a>
+		<section
+			class="grid grid-cols-2 gap-y-8 bg-primary text-primary-content p-4 md:px-20 pt-20"
+		>
+			<div class="col-span-2 lg:col-span-1">
+				<h1 class="mb-4 text-5xl font-bold">Featured Work</h1>
+				<h2 class="mb-8 text-xl 2xl:text-2xl">
+					I love to create things, and I'm always working on something new! You
+					can view some of my favorite projects below.
+				</h2>
 			</div>
-			<SwiperSection class="text-base-content" wrapperClass="pb-10">
+			<a
+				href="/projects/"
+				class="btn btn-secondary col-span-2 lg:col-span-1 row-end-4 lg:row-auto mx-auto lg:mr-0"
+				>See more</a
+			>
+			<SwiperSection class="col-span-2 w-full" wrapperClass="pb-10">
 				{featured.map((project) => <ProjectCard project={project} />)}
 			</SwiperSection>
 		</section>
