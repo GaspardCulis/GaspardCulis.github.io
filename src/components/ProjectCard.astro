@@ -30,7 +30,7 @@ const { title, description, repo, url, image, tags } = Astro.props.project.data;
           href={`/project/${Astro.props.project.slug}`}
           class="card-title hover:underline">{title}</a
         >
-        <p>{description}</p>
+        <p class="min-h-[4em]">{description}</p>
       </div>
       <div class="xl:ml-auto space-x-2">
         {
