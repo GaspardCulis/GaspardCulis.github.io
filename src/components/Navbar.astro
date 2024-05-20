@@ -54,7 +54,9 @@ const { pages, left, right, fixed } = Astro.props;
         right?.text && (
           <a href={right.href || "#"} class="btn btn-accent">
             {right.text}
-            {right?.icon && <img src={right.icon} />}
+            {right?.icon && (
+              <img src={right.icon} alt="Icon" width="24" height="24" />
+            )}
           </a>
         )
       }
