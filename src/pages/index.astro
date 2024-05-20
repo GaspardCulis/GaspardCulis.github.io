@@ -1,16 +1,9 @@
 ---
 import { getEntry } from "astro:content";
 import Hero from "../components/Hero.astro";
-import Navbar from "../components/Navbar.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SwiperSection from "../components/SwiperSection.astro";
 import Layout from "../layouts/Layout.astro";
-
-const pages = {
-	"": "Home",
-	projects: "Projects",
-	skills: "Skills",
-};
 
 const featured = [
 	await getEntry("project", "daniel-culis"),
@@ -21,15 +14,6 @@ const featured = [
 
 <Layout title="Gaspard Culis">
 	<main>
-		<Navbar
-			pages={pages}
-			left={{ text: "Gasdev.fr", href: "/" }}
-			right={{
-				text: "My CV",
-				icon: "https://api.iconify.design/material-symbols/download-rounded.svg?height=24",
-				href: "https://public.s3web.gasdev.fr/CV Gaspard Culis 2024.pdf",
-			}}
-		/>
 		<Hero />
 		<section
 			class="grid grid-cols-2 gap-y-8 bg-primary text-primary-content p-4 md:px-20 pt-20"

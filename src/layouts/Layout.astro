@@ -1,9 +1,17 @@
 ---
+import Navbar from "../components/Navbar.astro";
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
+const pages = {
+	"": "Home",
+	projects: "Projects",
+	skills: "Skills",
+};
 ---
 
 <!doctype html>
@@ -17,6 +25,15 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Navbar
+			pages={pages}
+			left={{ text: "Gasdev.fr", href: "/" }}
+			right={{
+				text: "My CV",
+				icon: "https://api.iconify.design/material-symbols/download-rounded.svg?height=24",
+				href: "https://public.s3web.gasdev.fr/CV Gaspard Culis 2024.pdf",
+			}}
+		/>
 		<slot />
 	</body>
 </html>
