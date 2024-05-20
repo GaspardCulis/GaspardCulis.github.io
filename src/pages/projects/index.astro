@@ -8,6 +8,11 @@ const projects = await getCollection("project");
 
 <Layout title="Gaspard Culis | Projects">
   <main class="p-4 md:px-20 pt-20">
+    <h1 class="mb-4 text-5xl font-bold">My Projects</h1>
+    <h2 class="mb-8 text-xl 2xl:text-2xl">
+      Here is a non-curated of the projects I've been working on for the last
+      years.
+    </h2>
     <section class="grid grid-cols-3 gap-12">
       {
         projects.map((project) => (
