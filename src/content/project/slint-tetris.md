@@ -9,5 +9,3 @@ tags:
   - SlintUI
   - WASM
 ---
-
-Haha salut c mon site

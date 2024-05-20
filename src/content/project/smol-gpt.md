@@ -7,5 +7,3 @@ tags:
   - GPT
   - PyTorch
 ---
-
-Haha salut c mon site

@@ -7,5 +7,3 @@ tags:
   - C++
   - Botcraft
 ---
-
-Haha salut c mon site

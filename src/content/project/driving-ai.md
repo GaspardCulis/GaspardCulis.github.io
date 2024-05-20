@@ -9,5 +9,3 @@ tags:
   - Python
   - Pygame
 ---
-
-Haha salut c mon site

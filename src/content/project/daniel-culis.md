@@ -10,5 +10,3 @@ tags:
   - TinaCMS
   - Vercel
 ---
-
-Haha salut c son site

@@ -8,5 +8,3 @@ tags:
   - Pygame
   - GameJam
 ---
-
-Haha salut c mon site

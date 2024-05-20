@@ -10,5 +10,3 @@ tags:
   - i18n
   - Vercel
 ---
-
-Haha salut c mon site

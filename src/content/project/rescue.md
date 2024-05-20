@@ -8,5 +8,3 @@ tags:
   - Godot
   - GameJam
 ---
-
-Haha salut c mon site

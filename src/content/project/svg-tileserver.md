@@ -8,5 +8,3 @@ tags:
   - ActixWeb
   - SVG
 ---
-
-Haha salut c mon site
