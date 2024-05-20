@@ -10,7 +10,7 @@ const { title, description, repo, url, image, tags } = Astro.props.project.data;
 ---
 
 <div
-  class="card group bg-base-100 hover:bg-base-200 text-base-content shadow-xl transition-colors"
+  class="card my-auto group bg-base-100 hover:bg-base-200 text-base-content shadow-xl transition-colors"
 >
   <figure>
     <Image
@@ -38,7 +38,7 @@ const { title, description, repo, url, image, tags } = Astro.props.project.data;
             Full post
           </div>
         </div>
-        <p class="min-h-[4em]">{description}</p>
+        <p>{description}</p>
       </div>
       <div class="xl:ml-auto space-x-2">
         {
