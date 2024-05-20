@@ -9,7 +9,11 @@ const projects = await getCollection("project");
 <Layout title="Gaspard Culis | Projects">
   <main class="p-4 md:px-20 pt-20">
     <section class="grid grid-cols-3 gap-12">
-      {projects.map((project) => <ProjectCard project={project} />)}
+      {
+        projects.map((project) => (
+          <ProjectCard project={project} mode="border" />
+        ))
+      }
     </section>
   </main></Layout
 >
