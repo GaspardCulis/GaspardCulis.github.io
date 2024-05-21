@@ -11,9 +11,12 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { Content } = await project.render();
+const { Content, remarkPluginFrontmatter } = await project.render();
 ---
 
-<MarkdownProjectLayout frontmatter={project.data}>
+<MarkdownProjectLayout
+  frontmatter={project.data}
+  remarkPluginFrontmatter={remarkPluginFrontmatter}
+>
   <Content />
 </MarkdownProjectLayout>

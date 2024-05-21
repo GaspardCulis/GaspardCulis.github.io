@@ -5,9 +5,12 @@ import { Image } from "astro:assets";
 
 export interface Props {
   frontmatter: CollectionEntry<"project">["data"];
+  remarkPluginFrontmatter: Record<string, any>;
 }
 
-const { title, description, repo, url, image, tags } = Astro.props.frontmatter;
+const { title, description, repo, url, image, date, tags } =
+  Astro.props.frontmatter;
+const { minutesRead } = Astro.props.remarkPluginFrontmatter;
 ---
 
 <Layout title="Gaspard Culis | Projects">
@@ -18,11 +21,14 @@ const { title, description, repo, url, image, tags } = Astro.props.frontmatter;
       class="w-full max-w-6xl m-auto pb-8"
     />
     <article class="prose xl:prose-xl m-auto">
-      <h1>Title</h1>
+      <h1>{title}</h1>
       <div class="divider"></div>
-      <div>description</div>
+      <div>{description}</div>
       <div class="flex justify-between space-x-2">
-        <div class="text-sm flex items-center">25 min read · Oct 24, 2023</div>
+        <div class="text-sm flex items-center">
+          {minutesRead || ""}
+          {date ? ` · ${date.toLocaleDateString()}` : ""}
+        </div>
         <div class="space-x-2">
           {
             tags.map((tag) => (
