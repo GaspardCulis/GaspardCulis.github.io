@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { remarkReadingTime } from "./plugins/remark-reading-time.mjs";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -6,4 +7,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://gaspardculis.github.io",
   integrations: [tailwind()],
+  markdown: {
+    remarkPlugins: [remarkReadingTime],
+  },
 });
