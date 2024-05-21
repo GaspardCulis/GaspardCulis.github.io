@@ -12,10 +12,26 @@ const { title, description, repo, url, image, tags } = Astro.props.frontmatter;
 
 <Layout title="Gaspard Culis | Projects">
   <main class="w-full py-8 lg:py-16 px-6 lg:px-8">
-    <Image src={image} alt="Blog post image" class="w-full max-w-6xl m-auto" />
-    <article class="prose xl:prose-xl mt-8 my-auto">
+    <Image
+      src={image}
+      alt="Blog post image"
+      class="w-full max-w-6xl m-auto pb-8"
+    />
+    <article class="prose xl:prose-xl m-auto">
       <h1>Title</h1>
-      <h4>description</h4>
+      <div class="divider"></div>
+      <div>description</div>
+      <div class="flex justify-between space-x-2">
+        <div class="text-sm flex items-center">25 min read · Oct 24, 2023</div>
+        <div class="space-x-2">
+          {
+            tags.map((tag) => (
+              <div class="badge badge-outline hover:badge-ghost">{tag}</div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="divider"></div>
       <slot />
     </article>
   </main>
