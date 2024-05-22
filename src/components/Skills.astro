@@ -7,11 +7,10 @@
   import { Skill, root_skill } from "../content/skills";
   import ForceGraph from "force-graph";
 
-  const nodes: { id: number; name: string; value: Skill }[] = [];
+  const nodes: { id: number; value: Skill }[] = [];
   Skill.nodes.forEach((skill, _id) => {
     nodes.push({
       id: skill.id,
-      name: skill.name,
       value: skill,
     });
   });
