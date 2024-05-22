@@ -21,9 +21,14 @@ export class Skill {
   }
 
   getIconUrl(): string | null {
-    return this.icon
-      ? `https://api.iconify.design/skill-icons/${this.icon}.svg?height=24`
-      : null;
+    if (this.icon) {
+      if (this.icon.startsWith("http") || this.icon.startsWith("/icons/")) {
+        return this.icon;
+      } else {
+        return `https://api.iconify.design/skill-icons/${this.icon}.svg?height=24`;
+      }
+    }
+    return null;
   }
 }
 
@@ -36,7 +41,7 @@ const cpp = new Skill("C++", "cpp");
 const programming = new Skill("Programming");
 programming.linkTo(python, javascript, typescript, rust, cpp);
 
-const webgpu = new Skill("WebGPU");
+const webgpu = new Skill("WebGPU", "/icons/wgpu.svg");
 const webdev = new Skill("Web Development");
 webdev.linkTo(
   new Skill("HTML", "html"),
@@ -49,7 +54,11 @@ webdev.linkTo(
 );
 
 const graphics_programming = new Skill("Graphics Programming");
-graphics_programming.linkTo(new Skill("OpenGL"), webgpu, rust);
+graphics_programming.linkTo(
+  new Skill("OpenGL", "/icons/opengl.svg"),
+  webgpu,
+  rust,
+);
 
 const bevy = new Skill("Bevy Game Engine", "bevy-dark");
 bevy.linkTo(rust);
@@ -64,7 +73,7 @@ gamedev.linkTo(
 const machine_learning = new Skill("Machine Learning");
 machine_learning.linkTo(
   new Skill("PyTorch", "pytorch-dark"),
-  new Skill("Numpy"),
+  new Skill("Numpy", "/icons/numpy.svg"),
   python,
 );
 
