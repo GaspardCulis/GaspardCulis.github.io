@@ -1,21 +1,37 @@
-class Skill {
-  protected links: Set<Skill> = new Set();
+export class Skill {
+  public static nodes: Map<number, Skill> = new Map();
+  public static links: Set<{ source: number; target: number }> = new Set();
+  readonly id: number;
 
-  constructor(readonly name: string) {}
+  constructor(
+    readonly name: string,
+    readonly icon?: string,
+  ) {
+    this.id = Math.random();
+    Skill.nodes.set(this.id, this);
+  }
 
   linkTo(...other_skills: Skill[]) {
     other_skills.forEach((skill) => {
-      this.links.add(skill);
-      skill.links.add(this);
+      Skill.links.add({
+        source: this.id,
+        target: skill.id,
+      });
     });
+  }
+
+  getIconUrl(): string | null {
+    return this.icon
+      ? `https://api.iconify.design/skill-icons/${this.icon}.svg?height=24`
+      : null;
   }
 }
 
-const python = new Skill("Python");
-const javascript = new Skill("JavaScript");
-const typescript = new Skill("TypeScript");
-const rust = new Skill("Rust");
-const cpp = new Skill("C++");
+const python = new Skill("Python", "python-dark");
+const javascript = new Skill("JavaScript", "javascript");
+const typescript = new Skill("TypeScript", "typescript");
+const rust = new Skill("Rust", "rust");
+const cpp = new Skill("C++", "cpp");
 
 const programming = new Skill("Programming");
 programming.linkTo(python, javascript, typescript, rust, cpp);
@@ -23,28 +39,40 @@ programming.linkTo(python, javascript, typescript, rust, cpp);
 const webgpu = new Skill("WebGPU");
 const webdev = new Skill("Web Development");
 webdev.linkTo(
-  new Skill("HTML"),
-  new Skill("CSS"),
-  new Skill("TailwindCSS"),
-  new Skill("AstroJS"),
-  new Skill("React"),
-  new Skill("VueJS"),
+  new Skill("HTML", "html"),
+  new Skill("CSS", "css"),
+  new Skill("TailwindCSS", "tailwindcss-dark"),
+  new Skill("AstroJS", "astro"),
+  new Skill("React", "react-dark"),
+  new Skill("VueJS", "vuejs-dark"),
   webgpu,
 );
 
 const graphics_programming = new Skill("Graphics Programming");
 graphics_programming.linkTo(new Skill("OpenGL"), webgpu, rust);
 
-const bevy = new Skill("Bevy Game Engine");
+const bevy = new Skill("Bevy Game Engine", "bevy-dark");
 bevy.linkTo(rust);
 
 const gamedev = new Skill("Game Development");
-gamedev.linkTo(new Skill("Godot Game Engine"), bevy, graphics_programming);
+gamedev.linkTo(
+  new Skill("Godot Game Engine", "godot-dark"),
+  bevy,
+  graphics_programming,
+);
 
 const machine_learning = new Skill("Machine Learning");
-machine_learning.linkTo(new Skill("PyTorch"), new Skill("Numpy"), python);
+machine_learning.linkTo(
+  new Skill("PyTorch", "pytorch-dark"),
+  new Skill("Numpy"),
+  python,
+);
 
-const root_skill = new Skill("Computer Science");
-root_skill.linkTo(programming, webdev, gamedev, graphics_programming);
-
-export default root_skill;
+export const root_skill = new Skill("Computer Science");
+root_skill.linkTo(
+  programming,
+  webdev,
+  gamedev,
+  graphics_programming,
+  machine_learning,
+);
