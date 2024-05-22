@@ -114,7 +114,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     vec3 color = psyColor(fragCoord) * smoth;
     
     float alpha = 1.0;
-    if (length(color.rgb) == 0.0) {
+    if (length(color.rbg) == 0.0) {
         alpha = 0.0;
         color = vec3(1.0);
     }
