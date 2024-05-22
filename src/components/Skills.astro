@@ -1,0 +1,77 @@
+---
+
+---
+
+<div id="skills-graph"></div>
+<script>
+  import { Skill, root_skill } from "../content/skills";
+  import ForceGraph from "force-graph";
+
+  const nodes: { id: number; name: string; value: Skill }[] = [];
+  Skill.nodes.forEach((skill, _id) => {
+    nodes.push({
+      id: skill.id,
+      name: skill.name,
+      value: skill,
+    });
+  });
+
+  const size = 8;
+  const graph = ForceGraph();
+  graph(document.getElementById("skills-graph")!)
+    .graphData({
+      nodes,
+      links: Array.from(Skill.links),
+    })
+    .zoom(6)
+    .minZoom(6)
+    .maxZoom(6)
+    .enablePanInteraction(false)
+    .nodeCanvasObject((node, ctx, globalScale) => {
+      // @ts-ignore
+      const value = node.value as Skill;
+      const img = new Image();
+      const iconUrl = value.getIconUrl();
+      let textYOffset = 0;
+      if (iconUrl) {
+        img.src = iconUrl;
+        ctx.drawImage(img, node.x! - size / 2, node.y! - size / 2, size, size);
+        textYOffset += size / 2 + 4;
+      }
+      const label = value.name;
+      const fontSize = (value.id === root_skill.id ? 32 : 24) / globalScale;
+      ctx.font = `${fontSize}px Sans-Serif`;
+      const textWidth = ctx.measureText(label).width;
+      const bckgDimensions = [textWidth, fontSize].map(
+        (n) => n + fontSize * 0.2,
+      ); // some padding
+
+      ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+      ctx.fillRect(
+        node.x! - bckgDimensions[0] / 2,
+        node.y! - bckgDimensions[1] / 2 + textYOffset,
+        // @ts-ignore
+        ...bckgDimensions,
+      );
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = "#3A4E6A";
+      let neutralContent = getComputedStyle(document.body).getPropertyValue(
+        "--nc",
+      );
+      ctx.fillText(label, node.x!, node.y! + textYOffset);
+    })
+    .nodePointerAreaPaint((node, color, ctx) => {
+      ctx.fillStyle = color;
+      ctx.fillRect(node.x! - size / 2, node.y! - size / 2, size, size); // draw square as pointer trap
+    });
+
+  setTimeout(() => {
+    const rootNode = graph
+      .graphData()
+      .nodes.find((n) => n.id === root_skill.id)!;
+    console.log(rootNode);
+    graph.centerAt(rootNode.x, rootNode.y, 1000);
+  }, 500);
+</script>
