@@ -16,16 +16,32 @@
     });
   });
 
-  const size = 8;
   const graph = ForceGraph();
+  const screenWidth = document.body.clientWidth;
+  let zoom: number;
+  let size: number;
+  if (screenWidth > 2000) {
+    zoom = 6;
+    size = 10;
+  } else if (screenWidth > 1000) {
+    zoom = 4;
+    size = 13;
+  } else if (screenWidth > 700) {
+    zoom = 3;
+    size = 16;
+  } else {
+    zoom = 2.5;
+    size = 20;
+  }
+
   graph(document.getElementById("skills-graph")!)
     .graphData({
       nodes,
       links: Array.from(Skill.links),
     })
-    .zoom(6)
-    .minZoom(6)
-    .maxZoom(6)
+    .zoom(zoom)
+    .minZoom(zoom)
+    .maxZoom(zoom)
     .enablePanInteraction(false)
     .nodeCanvasObject((node, ctx, globalScale) => {
       // @ts-ignore
@@ -39,7 +55,8 @@
         textYOffset += size / 2 + 4;
       }
       const label = value.name;
-      const fontSize = (value.id === root_skill.id ? 32 : 24) / globalScale;
+      const fontSize =
+        (value.id === root_skill.id ? 32 : 24) / globalScale / (size / 10);
       ctx.font = `${fontSize}px Sans-Serif`;
       const textWidth = ctx.measureText(label).width;
       const bckgDimensions = [textWidth, fontSize].map(
@@ -71,7 +88,6 @@
     const rootNode = graph
       .graphData()
       .nodes.find((n) => n.id === root_skill.id)!;
-    console.log(rootNode);
     graph.centerAt(rootNode.x, rootNode.y, 1000);
   }, 500);
 </script>
