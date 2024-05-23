@@ -37,9 +37,11 @@ const javascript = new Skill("JavaScript", "javascript");
 const typescript = new Skill("TypeScript", "typescript");
 const rust = new Skill("Rust", "rust");
 const cpp = new Skill("C++", "cpp");
+const dart = new Skill("Dart", "dart-dark");
+const java = new Skill("Java", "java-dark");
 
 const programming = new Skill("Programming");
-programming.linkTo(python, javascript, typescript, rust, cpp);
+programming.linkTo(python, javascript, typescript, rust, cpp, dart, java);
 
 const webgpu = new Skill("WebGPU", "/icons/wgpu.svg");
 webgpu.linkTo(rust);
@@ -57,21 +59,18 @@ webdev.linkTo(
   actixweb,
 );
 
-const graphics_programming = new Skill("Graphics Programming");
-graphics_programming.linkTo(
-  new Skill("OpenGL", "/icons/opengl.svg"),
-  webgpu,
-  rust,
-);
+new Skill("Flutter", "flutter-dark").linkTo(dart);
+new Skill("Tauri", "tauri-dark").linkTo(rust);
+new Skill("Selenium", "selenium").linkTo(python);
 
 const bevy = new Skill("Bevy Game Engine", "bevy-dark");
-bevy.linkTo(rust);
+bevy.linkTo(rust, webgpu);
 
 const gamedev = new Skill("Game Development");
 gamedev.linkTo(
   new Skill("Godot Game Engine", "godot-dark"),
+  new Skill("OpenGL", "/icons/opengl.svg"),
   bevy,
-  graphics_programming,
 );
 
 const machine_learning = new Skill("Machine Learning");
@@ -81,11 +80,14 @@ machine_learning.linkTo(
   python,
 );
 
-export const root_skill = new Skill("Computer Science");
-root_skill.linkTo(
-  programming,
-  webdev,
-  gamedev,
-  graphics_programming,
-  machine_learning,
+const postgresql = new Skill("PostgreSQL", "postgresql-dark");
+postgresql.linkTo(new Skill("Supabase", "supabase-dark"));
+const database = new Skill("Database");
+database.linkTo(
+  new Skill("MongoDB", "mongodb"),
+  new Skill("GraphQL", "graphql-dark"),
+  postgresql,
 );
+
+export const root_skill = new Skill("Computer Science");
+root_skill.linkTo(programming, database);
