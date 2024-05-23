@@ -42,6 +42,9 @@ const programming = new Skill("Programming");
 programming.linkTo(python, javascript, typescript, rust, cpp);
 
 const webgpu = new Skill("WebGPU", "/icons/wgpu.svg");
+webgpu.linkTo(rust);
+const actixweb = new Skill("Actix Web", "actix-dark");
+actixweb.linkTo(rust);
 const webdev = new Skill("Web Development");
 webdev.linkTo(
   new Skill("HTML", "html"),
@@ -51,6 +54,7 @@ webdev.linkTo(
   new Skill("React", "react-dark"),
   new Skill("VueJS", "vuejs-dark"),
   webgpu,
+  actixweb,
 );
 
 const graphics_programming = new Skill("Graphics Programming");
