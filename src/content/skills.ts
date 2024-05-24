@@ -35,7 +35,6 @@ export class Skill {
 }
 
 const rust = new Skill("Rust", "rust").linkTo(new Skill("Tauri", "tauri-dark"));
-const webgpu = new Skill("WebGPU", "/icons/wgpu.svg").linkTo(rust);
 
 export const root_skill = new Skill("Computer Science").linkTo(
   new Skill("Programming").linkTo(
@@ -66,12 +65,14 @@ export const root_skill = new Skill("Computer Science").linkTo(
       new Skill("VueJS", "vuejs-dark"),
       new Skill("ThreeJS", "threejs-dark"),
       new Skill("Actix Web", "actix-dark").linkTo(rust),
-      webgpu,
     ),
     new Skill("Game Development").linkTo(
       new Skill("Godot Game Engine", "godot-dark"),
       new Skill("OpenGL", "/icons/opengl.svg"),
-      new Skill("Bevy Game Engine", "bevy-dark").linkTo(rust, webgpu),
+      new Skill("Bevy Game Engine", "bevy-dark").linkTo(
+        rust,
+        new Skill("WebGPU", "/icons/wgpu.svg").linkTo(rust),
+      ),
     ),
   ),
   new Skill("Database").linkTo(
