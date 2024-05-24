@@ -11,13 +11,15 @@ export class Skill {
     Skill.nodes.set(this.id, this);
   }
 
-  linkTo(...other_skills: Skill[]) {
+  linkTo(...other_skills: Skill[]): this {
     other_skills.forEach((skill) => {
       Skill.links.add({
         source: this.id,
         target: skill.id,
       });
     });
+
+    return this;
   }
 
   getIconUrl(): string | null {
@@ -32,86 +34,61 @@ export class Skill {
   }
 }
 
-const python = new Skill("Python", "python-dark");
-const javascript = new Skill("JavaScript", "javascript");
-const typescript = new Skill("TypeScript", "typescript");
-const rust = new Skill("Rust", "rust");
-const cpp = new Skill("C++", "cpp");
-const dart = new Skill("Dart", "dart-dark");
-const java = new Skill("Java", "java-dark");
+const rust = new Skill("Rust", "rust").linkTo(new Skill("Tauri", "tauri-dark"));
+const webgpu = new Skill("WebGPU", "/icons/wgpu.svg").linkTo(rust);
 
-const programming = new Skill("Programming");
-programming.linkTo(python, javascript, typescript, rust, cpp, dart, java);
-
-const versioncontrol = new Skill("Version Control");
-versioncontrol.linkTo(
-  programming,
-  new Skill("Git", "git"),
-  new Skill("Github", "github-dark"),
-  new Skill("CI & CD", "githubactions-dark"),
+export const root_skill = new Skill("Computer Science").linkTo(
+  new Skill("Programming").linkTo(
+    rust,
+    new Skill("Python", "python-dark").linkTo(
+      new Skill("Machine Learning").linkTo(
+        new Skill("PyTorch", "pytorch-dark"),
+        new Skill("Numpy", "/icons/numpy.svg"),
+      ),
+      new Skill("Selenium", "selenium"),
+    ),
+    new Skill("JavaScript", "javascript"),
+    new Skill("TypeScript", "typescript"),
+    new Skill("C++", "cpp"),
+    new Skill("Dart", "dart-dark").linkTo(new Skill("Flutter", "flutter-dark")),
+    new Skill("Java", "java-dark"),
+    new Skill("Version Control").linkTo(
+      new Skill("Git", "git"),
+      new Skill("Github", "github-dark"),
+      new Skill("CI & CD", "githubactions-dark"),
+    ),
+    new Skill("Web Development").linkTo(
+      new Skill("HTML", "html"),
+      new Skill("CSS", "css"),
+      new Skill("TailwindCSS", "tailwindcss-dark"),
+      new Skill("AstroJS", "astro"),
+      new Skill("React", "react-dark"),
+      new Skill("VueJS", "vuejs-dark"),
+      new Skill("ThreeJS", "threejs-dark"),
+      new Skill("Actix Web", "actix-dark").linkTo(rust),
+      webgpu,
+    ),
+    new Skill("Game Development").linkTo(
+      new Skill("Godot Game Engine", "godot-dark"),
+      new Skill("OpenGL", "/icons/opengl.svg"),
+      new Skill("Bevy Game Engine", "bevy-dark").linkTo(rust, webgpu),
+    ),
+  ),
+  new Skill("Database").linkTo(
+    new Skill("MongoDB", "mongodb"),
+    new Skill("GraphQL", "graphql-dark"),
+    new Skill("PostgreSQL", "postgresql-dark").linkTo(
+      new Skill("Supabase", "supabase-dark"),
+    ),
+  ),
+  new Skill("System Administration").linkTo(
+    new Skill("Bash", "bash-dark"),
+    new Skill("Docker", "docker"),
+    new Skill("NGINX", "nginx"),
+    new Skill("GNU + Linux", "linux-dark").linkTo(
+      new Skill("Arch Linux", "arch-dark"),
+      new Skill("Kali Linux", "kali-dark"),
+      new Skill("Ubuntu", "ubuntu-dark"),
+    ),
+  ),
 );
-
-const webgpu = new Skill("WebGPU", "/icons/wgpu.svg");
-webgpu.linkTo(rust);
-const actixweb = new Skill("Actix Web", "actix-dark");
-actixweb.linkTo(rust);
-const webdev = new Skill("Web Development");
-webdev.linkTo(
-  new Skill("HTML", "html"),
-  new Skill("CSS", "css"),
-  new Skill("TailwindCSS", "tailwindcss-dark"),
-  new Skill("AstroJS", "astro"),
-  new Skill("React", "react-dark"),
-  new Skill("VueJS", "vuejs-dark"),
-  new Skill("ThreeJS", "threejs-dark"),
-  webgpu,
-  actixweb,
-);
-
-new Skill("Flutter", "flutter-dark").linkTo(dart);
-new Skill("Tauri", "tauri-dark").linkTo(rust);
-new Skill("Selenium", "selenium").linkTo(python);
-
-const bevy = new Skill("Bevy Game Engine", "bevy-dark");
-bevy.linkTo(rust, webgpu);
-
-const gamedev = new Skill("Game Development");
-gamedev.linkTo(
-  new Skill("Godot Game Engine", "godot-dark"),
-  new Skill("OpenGL", "/icons/opengl.svg"),
-  bevy,
-);
-
-const machine_learning = new Skill("Machine Learning");
-machine_learning.linkTo(
-  new Skill("PyTorch", "pytorch-dark"),
-  new Skill("Numpy", "/icons/numpy.svg"),
-  python,
-);
-
-const postgresql = new Skill("PostgreSQL", "postgresql-dark");
-postgresql.linkTo(new Skill("Supabase", "supabase-dark"));
-const database = new Skill("Database");
-database.linkTo(
-  new Skill("MongoDB", "mongodb"),
-  new Skill("GraphQL", "graphql-dark"),
-  postgresql,
-);
-
-const linux = new Skill("GNU + Linux", "linux-dark");
-linux.linkTo(
-  new Skill("Arch Linux", "arch-dark"),
-  new Skill("Kali Linux", "kali-dark"),
-  new Skill("Ubuntu", "ubuntu-dark"),
-);
-
-const sysadmin = new Skill("System Administration");
-sysadmin.linkTo(
-  new Skill("Bash", "bash-dark"),
-  new Skill("Docker", "docker"),
-  new Skill("NGINX", "nginx"),
-  linux,
-);
-
-export const root_skill = new Skill("Computer Science");
-root_skill.linkTo(programming, database, sysadmin);
