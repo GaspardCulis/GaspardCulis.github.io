@@ -43,6 +43,13 @@ const java = new Skill("Java", "java-dark");
 const programming = new Skill("Programming");
 programming.linkTo(python, javascript, typescript, rust, cpp, dart, java);
 
+const versioncontrol = new Skill("Version Control");
+versioncontrol.linkTo(
+  programming,
+  new Skill("Git", "git"),
+  new Skill("Github", "github-dark"),
+);
+
 const webgpu = new Skill("WebGPU", "/icons/wgpu.svg");
 webgpu.linkTo(rust);
 const actixweb = new Skill("Actix Web", "actix-dark");
