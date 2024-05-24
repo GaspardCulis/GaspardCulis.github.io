@@ -48,6 +48,7 @@ versioncontrol.linkTo(
   programming,
   new Skill("Git", "git"),
   new Skill("Github", "github-dark"),
+  new Skill("CI & CD", "githubactions-dark"),
 );
 
 const webgpu = new Skill("WebGPU", "/icons/wgpu.svg");
@@ -62,6 +63,7 @@ webdev.linkTo(
   new Skill("AstroJS", "astro"),
   new Skill("React", "react-dark"),
   new Skill("VueJS", "vuejs-dark"),
+  new Skill("ThreeJS", "threejs-dark"),
   webgpu,
   actixweb,
 );
@@ -96,5 +98,20 @@ database.linkTo(
   postgresql,
 );
 
+const linux = new Skill("GNU + Linux", "linux-dark");
+linux.linkTo(
+  new Skill("Arch Linux", "arch-dark"),
+  new Skill("Kali Linux", "kali-dark"),
+  new Skill("Ubuntu", "ubuntu-dark"),
+);
+
+const sysadmin = new Skill("System Administration");
+sysadmin.linkTo(
+  new Skill("Bash", "bash-dark"),
+  new Skill("Docker", "docker"),
+  new Skill("NGINX", "nginx"),
+  linux,
+);
+
 export const root_skill = new Skill("Computer Science");
-root_skill.linkTo(programming, database);
+root_skill.linkTo(programming, database, sysadmin);
