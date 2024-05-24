@@ -43,23 +43,31 @@ const rust = s("Rust", "rust").linkTo(s("Tauri", "tauri-dark"));
 export const root_skill = s("Computer Science").linkTo(
   s("Programming").linkTo(
     rust,
-    s("Python", "python-dark").linkTo(
-      s("Machine Learning").linkTo(
-        s("PyTorch", "pytorch-dark"),
-        s("Numpy", "/icons/numpy.svg"),
-      ),
-      s("Selenium", "selenium"),
-    ),
-    s("JavaScript", "javascript"),
-    s("TypeScript", "typescript"),
-    s("C++", "cpp"),
-    s("Dart", "dart-dark").linkTo(s("Flutter", "flutter-dark")),
-    s("Java", "java-dark"),
     s("Version Control").linkTo(
       s("Git", "git"),
       s("Github", "github-dark"),
       s("CI & CD", "githubactions-dark"),
     ),
+    s("Game Development").linkTo(
+      s("Godot Game Engine", "godot-dark"),
+      s("OpenGL", "/icons/opengl.svg"),
+      s("Bevy Game Engine", "bevy-dark").linkTo(
+        rust,
+        s("WebGPU", "/icons/wgpu.svg").linkTo(rust),
+      ),
+    ),
+    s("Python", "python-dark").linkTo(
+      s("Selenium", "selenium"),
+      s("Machine Learning").linkTo(
+        s("PyTorch", "pytorch-dark"),
+        s("Numpy", "/icons/numpy.svg"),
+      ),
+    ),
+    s("Dart", "dart-dark").linkTo(s("Flutter", "flutter-dark")),
+    s("JavaScript", "javascript"),
+    s("TypeScript", "typescript"),
+    s("C++", "cpp"),
+    s("Java", "java-dark"),
     s("Web Development").linkTo(
       s("HTML", "html"),
       s("CSS", "css"),
@@ -70,19 +78,6 @@ export const root_skill = s("Computer Science").linkTo(
       s("ThreeJS", "threejs-dark"),
       s("Actix Web", "actix-dark").linkTo(rust),
     ),
-    s("Game Development").linkTo(
-      s("Godot Game Engine", "godot-dark"),
-      s("OpenGL", "/icons/opengl.svg"),
-      s("Bevy Game Engine", "bevy-dark").linkTo(
-        rust,
-        s("WebGPU", "/icons/wgpu.svg").linkTo(rust),
-      ),
-    ),
-  ),
-  s("Database").linkTo(
-    s("MongoDB", "mongodb"),
-    s("GraphQL", "graphql-dark"),
-    s("PostgreSQL", "postgresql-dark").linkTo(s("Supabase", "supabase-dark")),
   ),
   s("System Administration").linkTo(
     s("Bash", "bash-dark"),
@@ -93,5 +88,10 @@ export const root_skill = s("Computer Science").linkTo(
       s("Kali Linux", "kali-dark"),
       s("Ubuntu", "ubuntu-dark"),
     ),
+  ),
+  s("Database").linkTo(
+    s("MongoDB", "mongodb"),
+    s("GraphQL", "graphql-dark"),
+    s("PostgreSQL", "postgresql-dark").linkTo(s("Supabase", "supabase-dark")),
   ),
 );
