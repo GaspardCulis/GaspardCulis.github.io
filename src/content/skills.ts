@@ -44,8 +44,10 @@ export const root_skill = s("Computer Science").linkTo(
   s("Programming").linkTo(
     rust,
     s("Version Control").linkTo(
-      s("Git", "git"),
-      s("Github", "github-dark"),
+      s("Git", "git").linkTo(
+        s("Github", "github-dark"),
+        s("GitLab", "gitlab-dark"),
+      ),
       s("CI & CD", "githubactions-dark"),
     ),
     s("Game Development").linkTo(
@@ -63,11 +65,6 @@ export const root_skill = s("Computer Science").linkTo(
         s("Numpy", "/icons/numpy.svg"),
       ),
     ),
-    s("Dart", "dart-dark").linkTo(s("Flutter", "flutter-dark")),
-    s("JavaScript", "javascript"),
-    s("TypeScript", "typescript"),
-    s("C++", "cpp"),
-    s("Java", "java-dark"),
     s("Web Development").linkTo(
       s("HTML", "html"),
       s("CSS", "css"),
@@ -76,18 +73,22 @@ export const root_skill = s("Computer Science").linkTo(
       s("React", "react-dark"),
       s("VueJS", "vuejs-dark"),
       s("ThreeJS", "threejs-dark"),
-      s("Actix Web", "actix-dark").linkTo(rust),
     ),
+    s("Dart", "dart-dark").linkTo(s("Flutter", "flutter-dark")),
+    s("JavaScript", "javascript"),
+    s("TypeScript", "typescript"),
+    s("C++", "cpp"),
+    s("Java", "java-dark"),
   ),
   s("System Administration").linkTo(
-    s("Bash", "bash-dark"),
-    s("Docker", "docker"),
-    s("NGINX", "nginx"),
     s("GNU + Linux", "linux-dark").linkTo(
       s("Arch Linux", "arch-dark"),
       s("Kali Linux", "kali-dark"),
-      s("Ubuntu", "ubuntu-dark"),
+      s("Debian", "debian-dark"),
     ),
+    s("Bash", "bash-dark"),
+    s("Docker", "docker"),
+    s("NGINX", "nginx"),
   ),
   s("Database").linkTo(
     s("MongoDB", "mongodb"),
