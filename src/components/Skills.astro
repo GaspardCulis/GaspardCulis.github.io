@@ -20,17 +20,14 @@
   let zoom: number;
   let size: number;
   if (screenWidth > 2000) {
-    zoom = 6;
-    size = 10;
-  } else if (screenWidth > 1000) {
     zoom = 4;
-    size = 13;
-  } else if (screenWidth > 700) {
+    size = 14;
+  } else if (screenWidth > 1000) {
     zoom = 3;
-    size = 16;
+    size = 18;
   } else {
-    zoom = 2.5;
-    size = 20;
+    zoom = 2;
+    size = 22;
   }
 
   graph(document.getElementById("skills-graph")!)
