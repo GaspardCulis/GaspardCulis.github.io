@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gaspardculis.github.io",
+  site: "https://www.gasdev.fr",
   integrations: [tailwind()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
