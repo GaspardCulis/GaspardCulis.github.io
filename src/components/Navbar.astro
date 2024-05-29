@@ -33,7 +33,7 @@ const { pages, left, right, fixed } = Astro.props;
             width="64"
             height="64"
             class="mr-3"
-            alt="Logo gites de France"
+            alt="Navbar left icon"
           />
         )
       }
@@ -55,7 +55,12 @@ const { pages, left, right, fixed } = Astro.props;
           <a href={right.href || "#"} class="btn btn-accent">
             {right.text}
             {right?.icon && (
-              <img src={right.icon} alt="Icon" width="24" height="24" />
+              <img
+                src={right.icon}
+                alt="Navbar right icon"
+                width="24"
+                height="24"
+              />
             )}
           </a>
         )
