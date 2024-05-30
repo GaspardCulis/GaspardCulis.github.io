@@ -20,7 +20,7 @@ I week would have been quite a challenge if [Ewan Howell](https://github.com/ewa
 
 I'm not going to bother you about the implementations details (it's open-source anyways), but just mention that used the [AstroJS](https://astro.build) framework, and that I ended up making my own **TypeScript** state manager to share value/store change events between the app components, instead of using something like [nanostores](https://github.com/nanostores/nanostores).
 
-After 4 days, I had a fully working prototype, that I deployed on the internet using Vercel on February the 2nd of 2024, initially with the domain [minecraft-update-title-editor.vercel.app](https://minecraft-update-title-editor.vercel.app). In the following days, I updated the Website to be responsive, fixed some bugs, and improved the load times and SEO scores using [Google's LightHouse](https://github.com/GoogleChrome/lighthouse).
+After 4 days, I had a fully working prototype, that I deployed on the internet using Vercel on February the 2nd of 2024, initially with the domain [minecraft-update-title-editor.vercel.app](https://minecraft-update-title-editor.vercel.app). However, I later decided to change the domain name to [titlemc.app](https://titlemc.app) to make it more memorable and easier to type. In the following days, I updated the Website to be responsive, fixed some bugs, and improved the load times and SEO scores using [Google's LightHouse](https://github.com/GoogleChrome/lighthouse).
 
 I also experimented with **Google Analytics** in order to have some insights on my website's users. In case you've never seen an Analytics dashboard, here's how it looks:
 
