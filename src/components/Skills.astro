@@ -2,11 +2,44 @@
 
 ---
 
-<div id="skills-graph" class="overflow-hidden"></div>
+<div class="relative">
+  <div id="skills-graph" class="overflow-hidden"></div>
+  <div
+    class="absolute pointer-events-none px-4 md:px-20 flex justify-end items-start inset-0 p-12"
+  >
+    <div id="drag-tooltip" role="alert" class="alert max-w-xs">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        class="stroke-current shrink-0 w-6 h-6"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        ></path></svg
+      >
+      <span>Drag me around!</span>
+    </div>
+  </div>
+</div>
 <script>
   import { Skill, root_skill } from "../content/skills";
   import ForceGraph from "force-graph";
 
+  // Tooltip
+  const dragTooltip = document.querySelector("#drag-tooltip")!;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("intersecting");
+      }
+    });
+  });
+  observer.observe(dragTooltip);
+
+  // Graph
   const nodes: { id: number; value: Skill }[] = [];
   Skill.nodes.forEach((skill, _id) => {
     nodes.push({
@@ -70,9 +103,6 @@
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillStyle = "#3A4E6A";
-      let neutralContent = getComputedStyle(document.body).getPropertyValue(
-        "--nc",
-      );
       ctx.fillText(label, node.x!, node.y! + textYOffset);
     })
     .nodePointerAreaPaint((node, color, ctx) => {
@@ -85,5 +115,40 @@
       .graphData()
       .nodes.find((n) => n.id === root_skill.id)!;
     graph.centerAt(rootNode.x, rootNode.y, 1000);
+
+    // Hide drag tooltip event listener
+    graph.onNodeDragEnd(() => {
+      dragTooltip.classList.add("removed");
+    });
   }, 500);
 </script>
+<style>
+  #drag-tooltip.intersecting:not(.removed) {
+    animation: slideIn 2s ease-in-out forwards;
+  }
+
+  #drag-tooltip.removed {
+    animation: slideOut 500ms ease-in-out forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(150%);
+    }
+    70% {
+      transform: translateX(150%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(150%);
+    }
+  }
+</style>
