@@ -37,7 +37,8 @@
       }
     });
   });
-  observer.observe(dragTooltip);
+  if (!sessionStorage.getItem("dragTooltipShown"))
+    observer.observe(dragTooltip);
 
   // Graph
   const nodes: { id: number; value: Skill }[] = [];
@@ -119,10 +120,19 @@
     // Hide drag tooltip event listener
     graph.onNodeDragEnd(() => {
       dragTooltip.classList.add("removed");
+      sessionStorage.setItem("dragTooltipShown", "weeeeeee");
     });
   }, 500);
 </script>
 <style>
+  #drag-tooltip {
+    opacity: 0;
+  }
+
+  #drag-tooltip.intersecting {
+    opacity: 1;
+  }
+
   #drag-tooltip.intersecting:not(.removed) {
     animation: slideIn 2s ease-in-out forwards;
   }
