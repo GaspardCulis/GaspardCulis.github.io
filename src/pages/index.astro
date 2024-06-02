@@ -5,6 +5,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 import SwiperSection from "../components/SwiperSection.astro";
 import Layout from "../layouts/Layout.astro";
 import Skills from "../components/Skills.astro";
+import AboutMe from "../components/AboutMe.astro";
 
 const featured = [
 	await getEntry("project", "smol-gpt"),
@@ -44,6 +45,11 @@ const featured = [
 				</h2>
 			</div>
 			<Skills />
+		</section>
+		<section
+			class="flex flex-col items-center space-y-12 bg-primary text-primary-content p-4 md:px-20 pt-20"
+		>
+			<AboutMe />
 		</section>
 	</main>
 </Layout>
