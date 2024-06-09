@@ -8,13 +8,14 @@ export interface Props {
 
 const { testimonial } = Astro.props;
 const { author, author_role, image } = testimonial.data;
+const { Content } = await testimonial.render();
 ---
 
 <div
-  class="p-4 space-y-4 rounded-lg bg-base-200 hover:bg-base-100 border-2 border-base-300 text-neutral"
+  class="p-4 space-y-4 rounded-lg bg-base-200 border-2 border-base-300 text-neutral"
 >
-  <article class="text-lg">
-    {testimonial.body}
+  <article class="text-lg prose prose-p:text-neutral">
+    <Content />
   </article>
   <div class="flex space-x-4 items-center">
     {
