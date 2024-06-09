@@ -20,7 +20,7 @@ const testimonialCollection = defineCollection({
     z.object({
       author: z.string(),
       author_role: z.string(),
-      image: image(),
+      image: image().optional(),
     }),
 });
 
