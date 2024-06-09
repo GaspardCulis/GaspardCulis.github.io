@@ -1,17 +1,20 @@
 ---
-import { getEntry } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
 import Hero from "../components/Hero.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SwiperSection from "../components/SwiperSection.astro";
 import Layout from "../layouts/Layout.astro";
 import Skills from "../components/Skills.astro";
 import AboutMe from "../components/AboutMe.astro";
+import Testimonial from "../components/Testimonial.astro";
 
 const featured = [
 	await getEntry("project", "smol-gpt"),
 	await getEntry("project", "titlemc"),
 	await getEntry("project", "svg-tileserver"),
 ];
+
+const testimonials = await getCollection("testimonial");
 ---
 
 <Layout title="Gaspard Culis">
@@ -47,9 +50,25 @@ const featured = [
 			<Skills />
 		</section>
 		<section
-			class="flex flex-col items-center space-y-12 bg-primary text-primary-content p-4 md:px-20 pt-20"
+			class="flex flex-col items-center space-y-12 bg-primary text-primary-content p-4 md:px-20 py-20"
 		>
 			<AboutMe />
+		</section>
+		<section
+			class="lg:flex lg:justify-center bg-base-100 text-base-content p-4 py-20"
+		>
+			<div class="space-y-6 lg:space-y-12">
+				<h1 class="mb-4 text-5xl font-bold lg:w-2/3">
+					What people I've worked with say
+				</h1>
+				<h2 class="text-xl 2xl:text-2xl lg:w-1/2">
+					I've done freelance work and internships, and I love collaborating
+					with a team.
+				</h2>
+			</div>
+			<div class="pt-8 space-y-6">
+				{testimonials.map((t) => <Testimonial testimonial={t} />)}
+			</div>
 		</section>
 	</main>
 </Layout>
