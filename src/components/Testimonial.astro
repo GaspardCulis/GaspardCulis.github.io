@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  testimonial: CollectionEntry<"testimonial">;
+}
+
+const { testimonial } = Astro.props;
+const { author, author_role, image } = testimonial.data;
+---
+
+<div
+  class="p-4 space-y-4 rounded-lg bg-base-200 hover:bg-base-100 border-2 border-base-300 text-neutral"
+>
+  <article class="text-lg">
+    {testimonial.body}
+  </article>
+  <div class="flex space-x-4 items-center">
+    {
+      image && (
+        <Image
+          class="rounded-full w-16 h-16 object-cover"
+          src={image}
+          alt="Author picture"
+        />
+      )
+    }
+    <div>
+      <h3 class="font-bold">{author}</h3>
+      <p class="text-base-content">{author_role}</p>
+    </div>
+  </div>
+</div>
