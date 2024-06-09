@@ -14,6 +14,17 @@ const projectCollection = defineCollection({
     }),
 });
 
+const testimonialCollection = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      author: z.string(),
+      author_role: z.string(),
+      image: image(),
+    }),
+});
+
 export const collections = {
   project: projectCollection,
+  testimonial: testimonialCollection,
 };
