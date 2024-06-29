@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import me from "../content/images/me.jpg";
+import ContactObfuscator from "./ContactObfuscator.astro";
 ---
 
 <div class="hero min-h-[40vh] bg-base-100">
@@ -32,7 +33,11 @@ import me from "../content/images/me.jpg";
         Passionate and versatile developer with a background in full-stack
         WebDev, GameDev, Machine Learning and more!
       </p>
-      <button class="btn btn-primary">Get Started</button>
+      <button class="btn btn-primary"
+        ><ContactObfuscator href="mailto:gaspard@gasdev.fr"
+          >Contact me</ContactObfuscator
+        ></button
+      >
     </div>
   </div>
 </div>
