@@ -43,7 +43,27 @@ export const ui = {
     "hero.title":
       '<span class="text-secondary">Gaspard Culis</span> - Développeur full-stack',
     "hero.description":
-      "Développeur passionné et polyvalent, fort d'une expérience en développement web full-stack, GameDev, Machine Learning et bien plus encore !",
-    "hero.contact": "Contactez moi",
+      "Développeur passionné et polyvalent, je suis à l'aise en Full-stack WebDev, GameDev, Machine Learning et bien plus encore !",
+    "hero.contact": "Contactez-moi",
+
+    "featured.title": "Projets en vedette",
+    "featured.description":
+      "J'adore créer des choses, et je travaille toujours sur quelque chose de nouveau ! Vous pouvez voir certains de mes projets préférés ci-dessous.",
+    "featured.more": "Voir plus",
+
+    "toolkit.title": "Mes compétences",
+    "toolkit.description":
+      "J'adore apprendre de nouvelles technologies, et j'essaie toujours de me tenir au courant des nouvelles sorties. Vous pouvez voir mon arbre de compétences ci-dessous.",
+    "toolkit.hint": "Déplacez-moi !",
+
+    "about.title": "À propos de moi",
+
+    "testimonials.title": "Témoignages",
+    "testimonial.description":
+      "J'ai travaillé en freelance sur la plateforme Fiverr et en alternace chez Atos.",
+
+    "projects.title": "Mes projets",
+    "projects.description":
+      "Voici une liste exhaustive des projets sur lesquels j'ai travaillé ces dernières années.",
   },
 } as const;
