@@ -1,6 +1,8 @@
 ---
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import { locales } from "../i18n/ui";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 interface Props {
 	title: string;
@@ -8,14 +10,18 @@ interface Props {
 
 const { title } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
+const locale = locales[lang];
+const t = useTranslations(lang);
+
 const pages = {
-	"": "Home",
-	projects: "Projects",
+	"": t("nav.home"),
+	projects: t("nav.projects"),
 };
 ---
 
 <!doctype html>
-<html lang="en" data-theme="winter">
+<html lang={locale} data-theme="winter">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -29,7 +35,7 @@ const pages = {
 			pages={pages}
 			left={{ text: "Gasdev.fr", href: "/" }}
 			right={{
-				text: "My CV",
+				text: t("nav.resume"),
 				icon: "https://api.iconify.design/material-symbols/download-rounded.svg?height=24",
 				href: "https://public.s3web.gasdev.fr/CV Gaspard Culis 2024.pdf",
 			}}
