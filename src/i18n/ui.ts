@@ -19,6 +19,11 @@ export const ui = {
     "featured.description":
       "I love to create things, and I'm always working on something new! You can view some of my favorite projects below.",
     "featured.more": "See more",
+
+    "toolkit.title": "My toolkit",
+    "toolkit.description":
+      "I love learning new technologies, and I always try to keep-up to date with new releases. You can see my skill-tree below.",
+    "toolkit.hint": "Drag me around!",
   },
   fr: {
     "nav.home": "Accueil",

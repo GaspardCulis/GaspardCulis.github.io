@@ -44,10 +44,9 @@ const testimonials = await getCollection("testimonial");
 		</section>
 		<section class="bg-base-100 text-base-content">
 			<div class="p-4 md:px-20 pt-20">
-				<h1 class="mb-4 text-5xl font-bold">My toolkit</h1>
+				<h1 class="mb-4 text-5xl font-bold">{t("toolkit.title")}</h1>
 				<h2 class="text-xl 2xl:text-2xl lg:w-1/2">
-					I love learning new technologies, and I always try to keep-up to date
-					with new releases. You can see my skill-tree below.
+					{t("toolkit.description")}
 				</h2>
 			</div>
 			<Skills />
