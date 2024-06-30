@@ -30,6 +30,10 @@ export const ui = {
     "testimonials.title": "What people I've worked with say",
     "testimonial.description":
       "I've done freelance work and internships, and I love collaborating with a team.",
+
+    "projects.title": "My projects",
+    "projects.description":
+      "Here is a non-curated list of the projects I've been working on for the last years.",
   },
   fr: {
     "nav.home": "Accueil",
