@@ -24,6 +24,8 @@ export const ui = {
     "toolkit.description":
       "I love learning new technologies, and I always try to keep-up to date with new releases. You can see my skill-tree below.",
     "toolkit.hint": "Drag me around!",
+
+    "about.title": "A bit about me",
   },
   fr: {
     "nav.home": "Accueil",

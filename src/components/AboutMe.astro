@@ -2,11 +2,15 @@
 import { Image } from "astro:assets";
 
 import meClimbing from "../content/images/me-climbing.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="flex flex-col-reverse lg:grid grid-cols-3 gap-12 max-w-6xl">
   <article class="col-span-2 m-auto">
-    <h1 class="mb-12 text-5xl font-bold">A bit about me</h1>
+    <h1 class="mb-12 text-5xl font-bold">{t("about.title")}</h1>
     <p class="text-xl 2xl:text-2xl">
       Overthinker & problem solver — I’ve been writing software since I was 12
       (well, 14 if you don't count grinding Scratch as <em>writing software</em
