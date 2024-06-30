@@ -6,30 +6,16 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const { Content } = await import(`../content/aboutme/${lang}.md`);
 ---
 
 <div class="flex flex-col-reverse lg:grid grid-cols-3 gap-12 max-w-6xl">
   <article class="col-span-2 m-auto">
     <h1 class="mb-12 text-5xl font-bold">{t("about.title")}</h1>
-    <p class="text-xl 2xl:text-2xl">
-      Overthinker & problem solver — I’ve been writing software since I was 12
-      (well, 14 if you don't count grinding Scratch as <em>writing software</em
-      >), and kept practicing since then.
-      <br />
-      <br />
-      My daily driver is an <b>Artix Linux</b> machine running the <b
-        >Hyprland</b
-      > compositor, I'm writing all of my code in a <b>Rust</b> based <b>Vim</b>
-      like terminal editor on the <b>Alacritty</b> terminal emulator.
-      <br />
-      <br /> I am studying computer science in <b>Grenoble (France)</b>, and
-      getting my teeth into as many different side-projects as I can manage in
-      my free time
-      <br />
-      <br />
-
-      Outside of that: I love climbing, video games and I’m learning Russian!
-    </p>
+    <div class="text-xl 2xl:text-2xl">
+      <Content />
+    </div>
   </article>
   <Image
     class="object-contain col-span-1 m-auto rounded-lg"
