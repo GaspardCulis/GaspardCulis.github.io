@@ -18,9 +18,13 @@ const projects = await getCollection("project");
     </h2>
     <section class="grid lg:grid-cols-2 2xl:grid-cols-3 gap-8">
       {
-        projects.map((project) => (
-          <ProjectCard project={project} mode="border" />
-        ))
+        projects
+          .sort(
+            (a, b) =>
+              (b.data.priority || (b.body ? 1 : 0)) -
+              (a.data.priority || (a.body ? 1 : 0)),
+          )
+          .map((project) => <ProjectCard project={project} mode="border" />)
       }
     </section>
   </main></Layout

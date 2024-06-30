@@ -5,6 +5,7 @@ repo: "https://github.com/GaspardCulis/MUTE"
 url: "https://titlemc.app"
 image: ../images/titlemc.png
 date: 2024-05-30
+priority: 2
 tags:
   - AstroJS
   - ThreeJS
