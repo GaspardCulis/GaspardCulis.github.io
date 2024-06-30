@@ -26,6 +26,10 @@ export const ui = {
     "toolkit.hint": "Drag me around!",
 
     "about.title": "A bit about me",
+
+    "testimonials.title": "What people I've worked with say",
+    "testimonial.description":
+      "I've done freelance work and internships, and I love collaborating with a team.",
   },
   fr: {
     "nav.home": "Accueil",
