@@ -7,6 +7,10 @@ import Layout from "../layouts/Layout.astro";
 import Skills from "../components/Skills.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Testimonial from "../components/Testimonial.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const featured = [
 	await getEntry("project", "smol-gpt"),
@@ -24,16 +28,15 @@ const testimonials = await getCollection("testimonial");
 			class="grid grid-cols-2 gap-y-8 bg-primary text-primary-content p-4 md:px-20 pt-20"
 		>
 			<div class="col-span-2 lg:col-span-1">
-				<h1 class="mb-4 text-5xl font-bold">Featured Work</h1>
+				<h1 class="mb-4 text-5xl font-bold">{t("featured.title")}</h1>
 				<h2 class="mb-8 text-xl 2xl:text-2xl">
-					I love to create things, and I'm always working on something new! You
-					can view some of my favorite projects below.
+					{t("featured.description")}
 				</h2>
 			</div>
 			<a
 				href="/projects/"
 				class="btn btn-secondary col-span-2 lg:col-span-1 row-end-4 lg:row-auto mx-auto lg:mr-0"
-				>See more</a
+				>{t("featured.more")}</a
 			>
 			<SwiperSection class="col-span-2 w-full h-fit" wrapperClass="pb-10">
 				{featured.map((project) => <ProjectCard project={project} />)}

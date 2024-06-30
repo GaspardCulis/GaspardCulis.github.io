@@ -14,6 +14,11 @@ export const ui = {
     "hero.description":
       "Passionate and versatile developer with a background in full-stack WebDev, GameDev, Machine Learning and more!",
     "hero.contact": "Contact me",
+
+    "featured.title": "Featured Work",
+    "featured.description":
+      "I love to create things, and I'm always working on something new! You can view some of my favorite projects below.",
+    "featured.more": "See more",
   },
   fr: {
     "nav.home": "Accueil",
