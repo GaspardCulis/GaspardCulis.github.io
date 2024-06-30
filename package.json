@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.11.3",
+    "astro-i18n-aut": "^0.7.0",
     "force-graph": "^1.43.5",
     "mdast-util-to-string": "^4.0.0",
     "nanostores": "^0.10.3",
