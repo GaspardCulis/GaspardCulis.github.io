@@ -1,4 +1,6 @@
 ---
+import { translateUrl } from "../i18n/utils";
+
 export interface Props {
   pages: { [slug: string]: string };
   left?: {
@@ -105,21 +107,26 @@ const { pages, left, right, fixed } = Astro.props;
         class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
       >
         {
-          Object.entries(pages).map((page) => (
-            <li>
-              <a
-                href={`/${page[0]}`}
-                class={`block py-2 px-4 text-base-content font-semibold rounded lg:rounded-xl hover:bg-base-200 ${
-                  `${page[0]}` === Astro.url.pathname.split("/")[1]
-                    ? "text-primary"
-                    : ""
-                }`}
-                aria-current="page"
-              >
-                {page[1]}
-              </a>
-            </li>
-          ))
+          Object.entries(pages)
+            .map((page) => {
+              return {
+                url: translateUrl(Astro.url, page[0]),
+                name: page[1],
+              };
+            })
+            .map((page) => (
+              <li>
+                <a
+                  href={page.url}
+                  class={`block py-2 px-4 text-base-content font-semibold rounded lg:rounded-xl hover:bg-base-200 ${
+                    page.url === Astro.url.toString() ? "text-primary" : ""
+                  }`}
+                  aria-current="page"
+                >
+                  {page.name}
+                </a>
+              </li>
+            ))
         }
       </ul>
     </div>
