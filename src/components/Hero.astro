@@ -2,6 +2,10 @@
 import { Image } from "astro:assets";
 import me from "../content/images/me.jpg";
 import ContactObfuscator from "./ContactObfuscator.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="hero min-h-[40vh] bg-base-100">
@@ -26,16 +30,13 @@ import ContactObfuscator from "./ContactObfuscator.astro";
       </div>
     </div>
     <div>
-      <h1 class="text-5xl font-bold">
-        Hi, I'm <span class="text-secondary">Gaspard Culis</span>.
-      </h1>
+      <h1 class="text-5xl font-bold" set:html={t("hero.title")} />
       <p class="py-6 lg:pr-4">
-        Passionate and versatile developer with a background in full-stack
-        WebDev, GameDev, Machine Learning and more!
+        {t("hero.description")}
       </p>
       <button class="btn btn-primary"
         ><ContactObfuscator href="mailto:gaspard@gasdev.fr"
-          >Contact me</ContactObfuscator
+          >{t("hero.contact")}</ContactObfuscator
         ></button
       >
     </div>
