@@ -7,7 +7,7 @@ export const locales = {
 export const ui = {
   en: {
     "nav.home": "Home",
-    "nav.projects": "Projets",
+    "nav.projects": "Projects",
     "nav.resume": "My CV",
 
     "hero.title": 'Hi, I\'m <span class="text-secondary">Gaspard Culis</span>.',
