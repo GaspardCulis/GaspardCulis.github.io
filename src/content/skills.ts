@@ -85,6 +85,7 @@ export const root_skill = s("Computer Science").linkTo(
       s("Arch Linux", "arch-dark"),
       s("Kali Linux", "kali-dark"),
       s("Debian", "debian-dark"),
+      s("NixOS", "nix-dark"),
     ),
     s("Bash", "bash-dark"),
     s("Docker", "docker"),
