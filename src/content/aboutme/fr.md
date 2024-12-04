@@ -2,7 +2,7 @@ J'ai commencé à coder à l'âge de 12 ans (ou 14 si l'on ne compte pas mes heu
 
 <br>
 
-Je développe sous **Artix Linux** avec le compositeur **Hyprland**. J'utilise un éditeur de code en ligne de commande **Helix**, inspiré de **Vim** et codé en **Rust**, le tout dans l'émulateur de terminal **Alacritty**.
+Je développe sous la distribution Linux **NixOS** avec le compositeur **Hyprland** pour l'environnement bureau. J'utilise un éditeur de code en ligne de commande : **Helix**, inspiré de **Vim** et codé en **Rust**, le tout dans l'émulateur de terminal **Alacritty**.
 
 <br>
 

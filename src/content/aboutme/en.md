@@ -2,7 +2,7 @@ Overthinker & problem solver — I’ve been writing software since I was 12 (we
 
 <br>
 
-My daily driver is an **Artix Linux** machine running the **Hyprland** compositor, I'm writing all of my code in a **Rust** based **Vim** like terminal editor on the **Alacritty** terminal emulator.
+My daily driver is a **NixOS** flavored Linux environment running the **Hyprland** compositor, I'm writing all of my code in a **Rust** based **Vim** like terminal editor on the **Alacritty** terminal emulator.
 
 <br>
 
