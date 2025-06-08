@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import { remarkReadingTime } from "./plugins/remark-reading-time.mjs";
 
-import { i18n, filterSitemapByDefaultLocale } from "astro-i18n-aut/integration";
+import { i18n } from "astro-i18n-aut/integration";
 import tailwind from "@astrojs/tailwind";
 
 const defaultLocale = "en";
