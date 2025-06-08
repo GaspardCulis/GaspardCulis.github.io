@@ -29,7 +29,11 @@ const pages = {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<script defer src="https://analytics.gasdev.fr/script.js" data-website-id="80eeeaa8-b7bd-49b4-a3c9-f99f79dd54dd"></script>
+		<script
+			is:inline
+			defer
+			src="https://analytics.gasdev.fr/script.js"
+			data-website-id="80eeeaa8-b7bd-49b4-a3c9-f99f79dd54dd"></script>
 	</head>
 	<body>
 		<Navbar

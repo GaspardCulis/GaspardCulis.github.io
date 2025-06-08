@@ -13,9 +13,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const featured = [
-	await getEntry("project", "smol-gpt"),
-	await getEntry("project", "daniel-culis"),
-	await getEntry("project", "svg-tileserver"),
+	await getEntry("project", "smol-gpt")!,
+	await getEntry("project", "daniel-culis")!,
+	await getEntry("project", "svg-tileserver")!,
 ];
 
 const testimonials = await getCollection("testimonial");

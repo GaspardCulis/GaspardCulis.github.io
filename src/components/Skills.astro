@@ -52,7 +52,6 @@ const t = useTranslations(lang);
     });
   });
 
-  const graph = ForceGraph();
   const screenWidth = document.body.clientWidth;
   let zoom: number;
   let size: number;
@@ -67,7 +66,7 @@ const t = useTranslations(lang);
     size = 22;
   }
 
-  graph(document.getElementById("skills-graph")!)
+  let graph = new ForceGraph(document.getElementById("skills-graph")!)
     .graphData({
       nodes,
       links: Array.from(Skill.links),

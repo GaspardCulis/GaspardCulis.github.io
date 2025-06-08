@@ -31,7 +31,7 @@ export interface Props {
       (n as HTMLElement).classList?.add("swiper-slide");
     });
 
-    const _swiper = new Swiper(swiper, {
+    new Swiper(swiper, {
       modules: [Navigation, Pagination],
       direction: "horizontal",
       slidesPerView: "auto",
