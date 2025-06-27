@@ -66,6 +66,7 @@ export const root_skill = s("Computer Science").linkTo(
       ),
     ),
     s("Web Development").linkTo(
+      s("WASM", "webassembly"),
       s("HTML", "html"),
       s("CSS", "css"),
       s("TailwindCSS", "tailwindcss-dark"),
