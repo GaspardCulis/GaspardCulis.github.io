@@ -23,6 +23,9 @@ export default defineConfig({
     i18n({
       locales,
       defaultLocale,
+      exclude: [
+        "pages/robots.txt.ts"
+      ]
     }),
   ],
   markdown: {
