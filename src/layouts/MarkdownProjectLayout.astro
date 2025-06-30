@@ -8,8 +8,7 @@ export interface Props {
   remarkPluginFrontmatter: Record<string, any>;
 }
 
-const { title, description, repo, url, image, date, tags } =
-  Astro.props.frontmatter;
+const { title, description, image, date, tags } = Astro.props.frontmatter;
 const { minutesRead } = Astro.props.remarkPluginFrontmatter;
 ---
 
