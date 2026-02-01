@@ -20,11 +20,11 @@ data centers. The RAM prices skyrocketed to absurd levels.
 <center><i> RAM Prices Feb 1st, 2026</i></center>
 </div>
 
-GPUs already had gotten pretty expensive, but now these new RAM shortages were
-making PC gaming a luxury. At this time, one of my family members got into PC
-gaming, and asked me tech advice on buying a small form factor PC for casual
-gaming, but that could still play demanding titles. Achieving this at a low cost
-was really challenging in the current time.
+GPUs already had already gotten pretty expensive, but now these new RAM
+shortages were making PC gaming a luxury. At this time, one of my family members
+got into PC gaming, and asked me tech advice on buying a small form factor PC
+for casual gaming, but that could still play demanding titles. Achieving this at
+a low cost was really challenging in the current time.
 
 Luckily, a few days earlier, I watched a
 [YouTube video by ETA Prime](https://www.youtube.com/watch?v=StqSCfX9luQ)
@@ -73,8 +73,8 @@ done. I settled on [Bazzite](https://bazzite.gg/) for the OS (GNU+Linux
 distribution really), because I experienced it as a stable and well thought
 distro, which offers a SteamOS/console like experience, through Gamescope +
 Steam Big Picture mode. <br> Windows wasn't an option, because it coudldn't
-support the GPU drivers of the board (and why would you even want to use Windows
-in 2026 ?).
+support the GPU drivers of the board (and even, why would you want to use
+Windows in 2026 ?).
 
 After moving to my _"client's"_ place in _Bourgogne-Franche-Comté_, we needed to
 build a proper box. We planned on using a _Vosne-Romanée 1er Cru_ wine box,
@@ -98,9 +98,9 @@ perfectly, keeping a small form factor.
 <center><i> The guts of the beast </i></center>
 </div>
 
-The whole building process took us a whole day, and was very enjoyable! The
-built machine looked amazing, as well as the games it could run, with no lag
-while remaining reasonable thermal wise.
+The whole build process took a day, and was very enjoyable! The built machine
+looked amazing, as well as the games it could run, with no lag while remaining
+reasonable thermal wise (< 80°C).
 
 I didn't have time to test a lot of games besides Zelda BOTW emulation through
 Yuzu Emulator, which ran at a consistent 30FPS (the game is locked as this
