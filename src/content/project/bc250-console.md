@@ -107,8 +107,8 @@ Yuzu Emulator, which ran at a consistent 30FPS (the game is locked as this
 framerate), outperforming a native Nintendo Switch on load times.
 
 My _"client"_ was very pleased with the final result, and very grateful to our
-work. In the future, he/she might put me in touch with other people looking for
-a cheap, personalized gaming rig.
+work. In the future, they might put me in touch with other people looking for a
+cheap, personalized gaming rig.
 
 <div>
 
