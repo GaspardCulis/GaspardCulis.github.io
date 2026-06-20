@@ -97,4 +97,11 @@ export const root_skill = s("Computer Science").linkTo(
     s("GraphQL", "graphql-dark"),
     s("PostgreSQL", "postgresql-dark").linkTo(s("Supabase", "supabase-dark")),
   ),
+  s("Embedded programming & Electronics").linkTo(
+    s("Embassy", "https://github.com/embassy-rs/website/blob/main/static/favicon.png?raw=true"),
+    s("KiCAD", "/icons/kicad.svg"),
+    s("STM32", "/icons/stm.svg"),
+    s("Arduino", "arduino"),
+    rust
+  )
 );
